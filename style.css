@@ -1,0 +1,238 @@
+body {
+    background: #E6FAE9;
+    font-family: Helvetica, sans-serif;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+}
+
+.body-container {
+    display: flex;
+    /*justify-content: flex-end;*/
+}
+
+#shoppingTable {
+/*    width:50%;*/
+    border-collapse: collapse;
+    vertical-align: top;
+    text-align: center;
+}
+#shoppingTable td  {
+    border: 1px solid cyan;
+    padding: 5px;
+}
+
+#shoppingTable th {
+    border: 1px solid cyan;
+    text-align: center;
+    background: #A7FCF1;
+    padding: 5px;
+}
+
+#shoppingTable img {
+    vertical-align: middle;
+    width: 70px;
+    height: 52px;
+    /* margin: 10px 10px; */
+    padding: 10px;
+    background-color: white;
+}
+#socialNews-container {
+    float: right;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+}
+
+#socialNewsTable {
+    border-collapse: collapse;
+    vertical-align: top;
+    text-align: center;
+}
+#socialNewsTable td {
+    border: 1px solid cyan;
+    text-align: center;
+    width: 75px;
+    height: 50px;
+    background: white;
+}
+#socialNewsTable th {
+    border: 1px solid cyan;
+    text-align: center;
+    background: #A7FCF1;
+    padding: 5px;
+}
+#socialNewsTable img {
+   vertical-align: middle;
+    width: 70px;
+    height: 52px;
+    margin: 10px 10px;
+    /* background-color: white; */
+}
+#referenceShopping-container {
+    float: right;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+}
+#referencesShoppingTable {
+    border-collapse: collapse;
+    vertical-align: top;
+    text-align: center;
+}
+#referencesShoppingTable td {
+    border: 1px solid cyan;
+    text-align: center;
+    width: 75px;
+    height: 50px;
+    background-color: white;
+}
+#referencesShoppingTable th {
+    border: 1px solid cyan;
+    text-align: center;
+    background: #A7FCF1;
+    padding: 5px;
+}
+#referencesShoppingTable img {
+    width: 70px;
+    height: 52px;
+    margin: 10px 10px;
+}
+
+#webForm {
+    background-color: #E6FAE9;
+}
+
+#webForm td {
+    vertical-align: top;
+
+}
+.center-form {
+    display: inline-block;
+    text-align: left;
+    background-color: #E6FAE9;
+}
+
+#search-container {
+    text-align: center;
+    padding-bottom: 10px;
+    margin:0 auto;
+    width:50%;
+}
+#search-container td {
+    vertical-align: top;
+    background-color: #E6FAE9;
+}
+#search-container button {
+    height:60px;
+}
+#search-container input {
+    height: 52px;
+}
+
+div #center-container {
+    text-align: center;
+    padding-bottom: 10px;
+    /*padding-left: 30px;*/
+    margin:0 auto;
+    width:50%;
+}
+#videoNEmailTable {
+    margin: 0 auto;
+    border-collapse: collapse;
+    vertical-align: top;
+    max-height: 100px;
+    text-align:left
+}
+#videoNEmailTable td  {
+    border: 1px solid cyan;
+    background: white;
+}
+
+#videoNEmailTable img {
+    vertical-align: middle;
+    width: 70px;
+    height: 52px;
+    /* margin: 10px 10px; */
+    background-color: white;
+}
+
+#videoNEmailTable th {
+    border: 1px solid cyan;
+    background:#A7FCF1;
+    text-align: center;
+    padding: 5px;
+}
+.clock-container {
+    display: inline-block;
+    vertical-align: top;
+    width: 25%;
+    min-width: max-content;
+}
+
+/* Background color for the navigation bar */
+nav {
+    background-color: #333;
+    /* Add padding top and bottom */
+    padding: 10px 0;
+}
+
+.divCenter {
+    text-align: center;
+    margin:0 auto;
+    width:50%;
+    padding-bottom:10px
+}
+/* Dropdown styles */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Style the dropdown content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: max-content;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    text-align: left;
+    top: 100%;
+    left: 0; /* Ensure dropdown items are aligned with the left edge */
+    /*margin-top: 10px; !* Add a margin to separate dropdown from the list item *!*/
+}
+
+/* Style the list items in the dropdown */
+.dropdown-content li {
+    padding: 10px;
+    white-space: nowrap; /* Prevent line breaks in multi-word links */
+    display: block; /* Display dropdown items in a vertical list */
+}
+
+/* Show the dropdown content when hovering over the list item */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Style list items */
+nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+/* Style links */
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    padding: 5px 10px; /* Add padding around the links */
+    border-radius: 5px; /* Add rounded corners */
+    display: inline-block;
+}
+
+/* Change link background and text color on hover */
+nav a:hover {
+    background-color: #007BFF;
+    color: #fff;
+}
