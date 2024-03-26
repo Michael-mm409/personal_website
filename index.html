@@ -1,224 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
-    <title>Home Page</title>
-    <link rel="stylesheet" href="style.css" type="text/css" media="all">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  </head>
-  <body style="background-color: #E6FAE9;">
-  <!-- Header -->
-    <div>
-      <div style="text-align: center; float: left; width: 25%; min-width: max-content; background-color: #E6FAE9">
-        <div style="font-weight:bold;" id="text"></div>
-      </div>
-      <!-- Home page header -->
-      <div class="divCenter">
-        <h1 style="color: cyan">My Customizable Home Page</h1><br/>
-      </div>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="images/favicon.ico">
+</head>
+<body>
+<header>
+    <div class="container">
+        <iframe class="datetime" src="datetime/datetime.html" width="220" height="100" frameborder="0"></iframe>
+        <h1 class="title">Modern Portfolio</h1>
     </div>
-    <div style="text-align: center">
-      <div class="divCenter">
-        <!-- Navigation bar -->
-        <nav class="divCenter clock-container">
-          <ul>
-            <li><a href="index.html">Home</a></li>
+</header>
+<nav>
+    <div class="container">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <!-- Add more navigation items as needed -->
+            <li class="dropdown">
+                <a href="#" >Google Services &#x25BC;</a>
+                <div class="dropdown-content">
+                    <a href="https://youtube.com">Youtube</a>
+                    <a href="https://photos.google.com/?tab=wq&pageId=none&pli=1">Google Photos</a>
+                    <a href="https://mail.google.com/">Gmail</a>
+                    <a href="https://drive.google.com/drive/u/0/my-drive">Google Drive</a>
+                    <a href="https://docs.google.com/spreadsheets/u/0/?tgif=d&pli=1">Google Sheets</a>
+                    <a href="https://docs.google.com/">Google Docs</a>
+                    <a href="https://docs.google.com/presentation/u/0/?tgif=d&pli=1">Google Slides</a>
+                    <a href="https://keep.google.com/u/0/#home">Google Keep</a>
+                    <a href="https://maps.google.com">Maps</a>
+                    <a href="https://calendar.google.com/calendar">Google Calendar</a>
+                    <a href="https://docs.google.com/forms/">Google Forms</a>
+                    <a href="https://sites.google.com/u/0/new?pli=1&authuser=0">Google Sites</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#" >Microsoft &#x25BC;</a>
+                <div class="dropdown-content">
+                    <a href="https://login.live.com">Personal Outlook Email</a>
+                    <a href="https://to-do.live.com/tasks/">Microsoft To Do</a>
+                    <a href="https://web.skype.com/">Skype</a>
+                    <a href="https://www.microsoft365.com/?auth=1">Microsoft 365</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#" >University &#x25BC;</a>
+                <div class="dropdown-content">
+                    <a href="https://www.uow.edu.au/student/learning-co-op/">The Learning Co-Op</a>
+                    <a href="https://solss.uow.edu.au/sid/sols_login_ctl.login?p_message=SOLS_AUTH_ERR10">SOLs</a>
+                    <a href="https://moodle.uowplatform.edu.au/course/view.php?id=39610">Moodle</a>
+                    <a href="https://courses.uow.edu.au/courses/current/766?offering=Wollongong-On-Campus">UOW Course Handbook</a>
+                    <a href="https://edstem.org/au/login?redirect=%2Fau%2Fdashboard&auth=1">EdStem</a>
+                    <a href="https://uow-access.symplicity.com/students/index.php?s=home">Uni Support Portal</a>
+                </div>
+            </li>
+            <li><a href="https://github.com/GhostPrime1234">Portfolio</a></li>
             <li><a href="#">About</a></li>
-            <li class="dropdown">
-              <a href="#">Google Services&#x25BC;</a>
-              <ul class="dropdown-content">
-                <li><a href="https://youtube.com">Youtube</a></li>
-                <li><a href="https://photos.google.com/?tab=wq&pageId=none&pli=1">Google Photos</a></li>
-                <li><a href="https://mail.google.com/">Gmail</a></li>
-                <li><a href="https://drive.google.com/drive/u/0/my-drive">Google Drive</a></li>
-                <li><a href="https://docs.google.com/spreadsheets/u/0/?tgif=d&pli=1">Google Sheets</a></li>
-                <li><a href="https://docs.google.com/">Google Docs</a></li>
-                <li><a href="https://docs.google.com/presentation/u/0/?tgif=d&pli=1">Google Slides</a></li>
-                <li><a href="https://keep.google.com/u/0/#home">Google Keep</a></li>
-                <li><a href="https://maps.google.com">Maps</a></li>
-                <li><a href="https://calendar.google.com/calendar">Google Calendar</a></li>
-                <li><a href="https://docs.google.com/forms/">Google Forms</a></li>
-                <li><a href="https://sites.google.com/u/0/new?pli=1&authuser=0">Google Sites</a></li>
-                <!-- Add more Google services here -->
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a href="#">Microsoft&#x25BC;</a>
-              <ul class="dropdown-content">
-                <li><a href="https://login.live.com">Personal Outlook Email</a></li>
-                <li><a href="https://to-do.live.com/tasks/">Microsoft To Do</a></li>
-                <li><a href="https://web.skype.com/">Skype</a></li>
-                <li><a href="https://www.microsoft365.com/?auth=1">Microsoft 365</a></li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a href="#">University&#x25BC;</a>
-              <ul class="dropdown-content">
-                <li><a href="https://www.uow.edu.au/student/learning-co-op/">The Learning Co-Op</a></li>
-                <li><a href="https://solss.uow.edu.au/sid/sols_login_ctl.login?p_message=SOLS_AUTH_ERR10">SOLs</a></li>
-                <li><a href="https://courses.uow.edu.au/courses/current/766?offering=Wollongong-On-Campus">UOW Course Handbook</a></li>
-                <li><a href="https://edstem.org/au/login?redirect=%2Fau%2Fdashboard&auth=1">EdStem</a></li>
-                <li><a href="https://uow-access.symplicity.com/students/index.php?s=home">Uni Support Portal</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href="https://my.gov.au/mygov#/" target="_blank">MyGov</a>
-            </li>
-            <li><a href="https://github.com/GhostPrime1234" target="_blank">Portfolio</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-      <div id="search-container">
-        <!-- Google Search Form -->
-        <form action="https://www.google.com.au/search" method="get">
-          <div class="center-form">
-            <table id="webForm">
-              <!-- FOR GOOGLE -->
-              <tr>
-                <td>
-                  <a href="https://www.google.com.au" target="_blank">
-                    <img src="images/Email/google.jpg" alt="Google Search internet homepage start-page">
-                  </a>
-                </td>
-                <td>
-                  <label>
-                    <input type="text" name="q" placeholder="Search Google">
-                  </label>
-                  <button type="submit" formtarget="_blank"><i class="fa fa-search"></i></button>
-                </td>
-              </tr>
+        </ul>
+    </div>
+</nav>
+<main>
+    <!-- Your main content goes here -->
+        <div id="form-container">
+            <form action="https://www.google.com.au/search" method="get" target="_blank">
+                <img id="google-image" src="images/Email/google.jpg"/>
+                <input name="q" placeholder="Search Google..." required id="google-input">
+                <input value="Search" type="submit" id="google-submit-button">
+            </form>
+        </div>
+        <div id="table-containers" class="flex-container">
+            <table id="socialNewsTable">
+                <tr>
+                    <th>SOCIAL</th>
+                    <th>NEWS</th>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://www.facebook.com/" target="_blank">
+                            <img src="images/Social/facebook.gif" alt="Facebook website icon"/>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="https://news.google.com/" target="_blank">
+                            <img src="images/News/news.google.gif" alt="Google News website icon">
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://www.twitter.com/" target="_blank">
+                            <img src="images/Social/twitter.gif" alt="Twitter website icon">
+                        </a>
+                    </td>
+                    <td>
+                        <a href="https://www.cnn.com/" target="_blank">
+                            <img src="images/News/cnn.gif" alt="CNN News website icon">
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://www.linkedin.com/" target="_blank">
+                            <img src="images/Social/linkedin.gif" alt="LinkedIn website icon">
+                        </a>
+                    </td>
+                    <td>
+                        <a href="https://www.forbes.com/" target="_blank">
+                            <img src="images/News/forbes.gif" alt="Forbes website icon">
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="http://www.reddit.com/" target="_blank">
+                            <img src="images/Social/reditt.gif" alt="Reddit website icon">
+                        </a>
+                    </td>
+                    <td>
+                        <a href="https://www.yahoo.com/news/" target="_blank">
+                            <img src="images/News/news.yahoo.gif" alt="Yahoo News website icon">
+                        </a>
+                    </td>
+                </tr>
             </table>
-          </div>
-        </form>
-      </div>
-    </div>
-    <div class="body-container">
-      <div id="socialNews-container">
-        <table id="socialNewsTable">
-          <tr>
-            <th>SOCIAL</th>
-            <th>NEWS</th>
-          </tr>
-          <tr>
-            <td>
-              <a href="https://www.facebook.com/" target="_blank">
-                <img src="images/Social/facebook.gif" alt="Facebook website icon"/>
-              </a>
-            </td>
-            <td>
-              <a href="https://news.google.com/" target="_blank">
-                <img src="images/News/news.google.gif" alt="Google News website icon">
-              </a>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <a href="https://www.twitter.com/" target="_blank">
-                <img src="images/Social/twitter.gif" alt="Twitter website icon">
-              </a>
-            </td>
-            <td>
-              <a href="https://www.cnn.com/" target="_blank">
-                <img src="images/News/cnn.gif" alt="CNN News website icon">
-              </a>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <a href="https://www.linkedin.com/" target="_blank">
-                <img src="images/Social/linkedin.gif" alt="LinkedIn website icon">
-              </a>
-            </td>
-            <td>
-              <a href="https://www.forbes.com/" target="_blank">
-                <img src="images/News/forbes.gif" alt="Forbes website icon">
-              </a>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <a href="http://www.reddit.com/" target="_blank">
-                <img src="images/Social/reditt.gif" alt="Reddit website icon">
-              </a>
-            </td>
-            <td>
-              <a href="https://www.yahoo.com/news/" target="_blank">
-                <img src="images/News/news.yahoo.gif" alt="Yahoo News website icon">
-              </a>
-            </td>
-          </tr>
-        </table>
-      </div>
-      <div id="center-container">
-        <table id="videoNEmailTable">
-          <tr>
-            <th>VIDEO</th>
-            <td>
-              <a href="https://youtube.com" target="_blank">
-                <img src="images/Videos/youtube.gif" style="width: 70px; height: 52px">
-              </a>
-            </td>
-            <td>
-              <a href="https://netflix.com" target="_blank">
-                <img src="images/Videos/netflix.gif">
-              </a>
-            </td>
-            <td>
-              <a href="https://www.disneyplus.com/en-au" target="_blank">
-                <img src="images/Videos/disney-plus.svg">
-              </a>
-            </td>
-          </tr>
-          <tr>
-            <th>EMAIL</th>
-            <td>
-              <a href="https://mail.google.com/" target="_blank">
-                <img src="images/Email/gmail.gif" style="width: 70px; height: 52px">
-              </a>
-            </td>
-            <td>
-              <a href="https://login.live.com" target="_blank">
-                <img src="images/Email/outlook.gif" style="width: 70px; height: 52px">
-              </a>
-            </td>
-          </tr>
-        </table>
-      </div>
-      <!-- Reference & Shopping Tables -->
-      <div id="referenceShopping-container">
-        <!-- References table -->
-        <table id="referencesShoppingTable">
-          <tr>
-            <th>SHOPPING</th>
-            <th>REFERENCE</th>
-          </tr>
-          <tr>
-            <td>
-              <a href="https://amazon.com.au" target="_blank">
-                <img src="images/Shopping/amazon.gif" alt="Amazon website"/>
-              </a>
-            </td>
-            <td>
-              <a href="https://wikipedia.org" target="_blank">
-                <img src="images/References/wikipedia.gif" alt="Wikipedia website icon">
-              </a>
-            </td>
-          </tr>
-          <tr>
-            <td style="text-align: center; width: 75px; height: 50px; padding-left: 2px">
-              <a href="https://ebay.com.au" target="_blank">
-                <img src="images/Shopping/ebay.gif" style="width: 70px; height: 52px">
-              </a>
-            </td>
-            <td style="text-align: center; width: 75px; height: 50px; padding-left: 2px">
-              <a href="https://dictionary.com" target="_blank">
-                <img src="images/References/dictionary.gif" alt="Dictionary website icon">
-              </a>
-            </td>
-          </tr>
-        </table>
-      </div>
-    </div>
-  </body>
+            <table id="videoNEmailTable">
+                <tr>
+                    <th>VIDEO</th>
+                    <th>EMAIL</th>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://youtube.com" target="_blank">
+                            <img src="images/Videos/youtube.gif" >
+                        </a>
+                    </td>
+                    <td>
+                        <a href="https://mail.google.com/" target="_blank">
+                            <img src="images/Email/gmail.gif" >
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://netflix.com" target="_blank">
+                            <img src="images/Videos/netflix.gif">
+                        </a>
+                    </td>
+                    <td>
+                        <a href="https://login.live.com" target="_blank">
+                            <img src="images/Email/outlook.gif" >
+                        </a>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://www.disneyplus.com/en-au" target="_blank">
+                            <img src="images/Videos/disney-plus.svg">
+                        </a>
+                    </td>
+                </tr>
+            </table>
+
+            <table id="referenceShoppingTable">
+                <tr>
+                    <th>REFERENCE</th>
+                    <th>SHOPPING</th>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://wikipedia.org" target="_blank">
+                            <img src="images/References/wikipedia.gif" alt="Wikipedia website icon">
+                        </a>
+                    </td>
+                    <td>
+                        <a href="https://amazon.com.au" target="_blank">
+                            <img src="images/Shopping/amazon.gif" alt="Amazon website"/>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://dictionary.com" target="_blank">
+                            <img src="images/References/dictionary.gif" alt="Dictionary website icon">
+                        </a>
+                    </td>
+                    <td>
+                        <a href="https://ebay.com.au" target="_blank">
+                            <img src="images/Shopping/ebay.gif">
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+</main>
+</body>
 </html>
