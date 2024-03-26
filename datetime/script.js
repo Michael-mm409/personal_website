@@ -37,18 +37,22 @@ function time() {
     let month = date.toLocaleString('default', {month: 'short'}).toUpperCase();
     let year = date.getFullYear();
     let timezone = date.toTimeString().substring(18,date.toTimeString().length);
+    let timezoneAbbreviation = "";
+    let words = timezone.match(/\w+/g);
 
+    // console.log(words)
+    for (let index=0; index < words.length; index++) {
+        timezoneAbbreviation += words[index][0]
 
-
+    }
     hour = update(hour);
     minute = update(minute);
     second = update(second);
 
 
     // Adding time elements to the div
-    document.getElementById("text").innerHTML =\
-		
-        `${name_weekday} ${day} ${month} ${year}<br/>${hour}:${minute}:${second} ${period} timezone ${timezone}`;
+    document.getElementById("text").innerHTML =
+        `${name_weekday} ${day} ${month} ${year}<br/>${hour}:${minute}:${second} ${period} timezone ${timezoneAbbreviation}`;
     // timeDiv.innerHTML = hour + " : " + minute + " : " + second + " " + period;
 
     // Set Timer to 1 sec (1000 ms)
