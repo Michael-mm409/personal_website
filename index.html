@@ -4,78 +4,131 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modern Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="icon" type="image/png" href="images/favicon.ico">
+    <style>
+        #google-image {
+            background-color: transparent !important;
+        }
+
+        /* Optional: Add styling for tables */
+        .table-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .table-container .table-responsive {
+           width: calc(100% / 3 - 10px);   /* Divide the width equally among 3 tables and subtract margin */
+		   margin-right: 10px; /* Adjust margin as needed */
+        }
+
+        /* Optional: Adjust responsiveness */
+        @media (max-width: 1000px) {
+            .table-container {
+            .table-container {
+                flex-direction: column;
+            }
+
+            .table-container .table-responsive {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+
+    </style>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
-<header>
+<header class="bg-light">
+    <!-- Header content -->
     <div class="container">
-        <iframe class="datetime" src="datetime/datetime.html" width="220" height="100" frameborder="0"></iframe>
-        <h1 class="title">Modern Portfolio</h1>
+        <div class="d-flex align-items-center">
+            <iframe class="datetime mr-3" src="datetime/datetime.html" width="220" height="100" frameborder="0"></iframe>
+            <h1 class="title mb-0">Modern Portfolio</h1>
+        </div>
     </div>
 </header>
-<nav>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <!-- Navigation content -->
     <div class="container">
-        <ul>
-            <li><a href="#">Home</a></li>
-            <!-- Add more navigation items as needed -->
-            <li class="dropdown">
-                <a href="#" >Google Services &#x25BC;</a>
-                <div class="dropdown-content">
-                    <a href="https://youtube.com">Youtube</a>
-                    <a href="https://photos.google.com/?tab=wq&pageId=none&pli=1">Google Photos</a>
-                    <a href="https://mail.google.com/">Gmail</a>
-                    <a href="https://drive.google.com/drive/u/0/my-drive">Google Drive</a>
-                    <a href="https://docs.google.com/spreadsheets/u/0/?tgif=d&pli=1">Google Sheets</a>
-                    <a href="https://docs.google.com/">Google Docs</a>
-                    <a href="https://docs.google.com/presentation/u/0/?tgif=d&pli=1">Google Slides</a>
-                    <a href="https://keep.google.com/u/0/#home">Google Keep</a>
-                    <a href="https://maps.google.com">Maps</a>
-                    <a href="https://calendar.google.com/calendar">Google Calendar</a>
-                    <a href="https://docs.google.com/forms/">Google Forms</a>
-                    <a href="https://sites.google.com/u/0/new?pli=1&authuser=0">Google Sites</a>
-                </div>
-            </li>
-            <li class="dropdown">
-                <a href="#" >Microsoft &#x25BC;</a>
-                <div class="dropdown-content">
-                    <a href="https://login.live.com">Personal Outlook Email</a>
-                    <a href="https://to-do.live.com/tasks/">Microsoft To Do</a>
-                    <a href="https://web.skype.com/">Skype</a>
-                    <a href="https://www.microsoft365.com/?auth=1">Microsoft 365</a>
-                </div>
-            </li>
-            <li class="dropdown">
-                <a href="#" >University &#x25BC;</a>
-                <div class="dropdown-content">
-                    <a href="https://www.uow.edu.au/student/learning-co-op/">The Learning Co-Op</a>
-                    <a href="https://solss.uow.edu.au/sid/sols_login_ctl.login?p_message=SOLS_AUTH_ERR10">SOLs</a>
-                    <a href="https://moodle.uowplatform.edu.au/course/view.php?id=39610">Moodle</a>
-                    <a href="https://courses.uow.edu.au/courses/current/766?offering=Wollongong-On-Campus">UOW Course Handbook</a>
-                    <a href="https://edstem.org/au/login?redirect=%2Fau%2Fdashboard&auth=1">EdStem</a>
-                    <a href="https://uow-access.symplicity.com/students/index.php?s=home">Uni Support Portal</a>
-                </div>
-            </li>
-            <li><a href="https://github.com/GhostPrime1234">Portfolio</a></li>
-            <li><a href="#">About</a></li>
-        </ul>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                <!-- Add more navigation items as needed -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Google Services</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                        <a class="dropdown-item" href="https://youtube.com">Youtube</a>
+                        <!-- Add more dropdown items here -->
+                        <a class="dropdown-item" href="https://photos.google.com/?tab=wq&pageId=none&pli=1">Google Photos</a>
+                        <a class="dropdown-item" href="https://mail.google.com/">Gmail</a>
+                        <a class="dropdown-item" href="https://drive.google.com/drive/u/0/my-drive">Google Drive</a>
+                        <a class="dropdown-item" href="https://docs.google.com/spreadsheets/u/0/?tgif=d&pli=1">Google Sheets</a>
+                        <a class="dropdown-item" href="https://docs.google.com/">Google Docs</a>
+                        <a class="dropdown-item" href="https://docs.google.com/presentation/u/0/?tgif=d&pli=1">Google Slides</a>
+                        <a class="dropdown-item" href="https://keep.google.com/u/0/#home">Google Keep</a>
+                        <a class="dropdown-item" href="https://maps.google.com">Maps</a>
+                        <a class="dropdown-item" href="https://calendar.google.com/calendar">Google Calendar</a>
+                        <a class="dropdown-item" href="https://docs.google.com/forms/">Google Forms</a>
+                        <a class="dropdown-item"href="https://sites.google.com/u/0/new?pli=1&authuser=0">Google Sites</a>
+                    </div>
+                </li>
+                <!-- Add more dropdown items as needed -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Microsoft</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                        <a class="dropdown-item" href="https://login.live.com">Personal Outlook Email</a>
+                        <!-- Add more dropdown items here -->
+                        <a class="dropdown-item" href="https://to-do.live.com/tasks/">Microsoft To Do</a>
+                        <a class="dropdown-item"href="https://web.skype.com/">Skype</a>
+                        <a class="dropdown-item" href="https://www.microsoft365.com/?auth=1">Microsoft 365</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">University</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
+                        <a class="dropdown-item" href="https://www.uow.edu.au/student/learning-co-op/">The Learning Co-Op</a>
+                        <!-- Add more dropdown items here -->
+                        <a class="dropdown-item" href="https://solss.uow.edu.au/sid/sols_login_ctl.login?p_message=SOLS_AUTH_ERR10">SOLs</a>
+                        <a class="dropdown-item" href="https://moodle.uowplatform.edu.au/course/view.php?id=39610">Moodle</a>
+                        <a class="dropdown-item" href="https://courses.uow.edu.au/courses/current/766?offering=Wollongong-On-Campus">UOW Course Handbook</a>
+                        <a class="dropdown-item" class="dropdown-item" href="https://edstem.org/au/login?redirect=%2Fau%2Fdashboard&auth=1">EdStem</a>
+                        <a class="dropdown-item" href="https://uow-access.symplicity.com/students/index.php?s=home">Uni Support Portal</a>
+                    </div>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="https://github.com/GhostPrime1234">Portfolio</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+            </ul>
+        </div>
     </div>
 </nav>
-<main>
+<main class="container">
     <!-- Your main content goes here -->
-        <div id="form-container">
-            <form action="https://www.google.com.au/search" method="get" target="_blank">
-                <img id="google-image" src="images/Email/google.jpg"/>
-                <input name="q" placeholder="Search Google..." required id="google-input">
-                <input value="Search" type="submit" id="google-submit-button">
-            </form>
-        </div>
-        <div id="table-containers" class="flex-container">
-            <table id="socialNewsTable">
+    <div id="form-container" class="mt-3">
+        <!-- Form container content -->
+        <form action="https://www.google.com.au/search" method="get" target="_blank" class="form-inline">
+            <img id="google-image" src="images/Email/new_google.png" alt="Google Logo" class="mr-2" style="background-color:white;width:100px">
+            <input name="q" placeholder="Search Google..." required id="google-input" class="form-control mr-2">
+            <input value="Search" type="submit" id="google-submit-button" class="btn btn-primary">
+        </form>
+    </div><br>
+    <!-- Add more content here -->
+    <div class="table-container">
+        <div class="table-responsive">
+            <table id="socialNewsTable" class="table table-bordered table-striped">
+                <!-- Social and News table content -->
+                <thead>
                 <tr>
                     <th>SOCIAL</th>
                     <th>NEWS</th>
                 </tr>
+                </thead>
+                <tbody>
                 <tr>
                     <td>
                         <a href="https://www.facebook.com/" target="_blank">
@@ -88,6 +141,7 @@
                         </a>
                     </td>
                 </tr>
+                <!-- Add more rows as needed -->
                 <tr>
                     <td>
                         <a href="https://www.twitter.com/" target="_blank">
@@ -125,11 +179,16 @@
                     </td>
                 </tr>
             </table>
-            <table id="videoNEmailTable">
-                <tr>
-                    <th>VIDEO</th>
-                    <th>EMAIL</th>
-                </tr>
+        </div>
+        <div class="table-responsive">
+            <table id="videoNEmailTable" class="table table-bordered table-striped">
+                <!-- Video and Email table content -->
+				<thead>
+					<tr>
+						<th>VIDEO</th>
+						<th>EMAIL</th>
+					</tr>
+				</thead>
                 <tr>
                     <td>
                         <a href="https://youtube.com" target="_blank">
@@ -163,12 +222,16 @@
                     </td>
                 </tr>
             </table>
-
-            <table id="referenceShoppingTable">
-                <tr>
-                    <th>REFERENCE</th>
-                    <th>SHOPPING</th>
-                </tr>
+        </div>
+        <div class="table-responsive">
+            <table id="referenceShoppingTable" class="table table-bordered table-striped">
+                <!-- Reference and Shopping table content -->
+				<thead>
+					<tr>
+						<th>REFERENCE</th>
+						<th>SHOPPING</th>
+					</tr>
+				</thead>
                 <tr>
                     <td>
                         <a href="https://wikipedia.org" target="_blank">
@@ -195,6 +258,7 @@
                 </tr>
             </table>
         </div>
+    </div>
 </main>
 </body>
 </html>

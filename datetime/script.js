@@ -51,7 +51,8 @@ function time() {
 
 
     // Adding time elements to the div
-    document.getElementById("text").innerHTML = `${name_weekday} ${day} ${month} ${year}<br/>${hour}:${minute}:${second} ${period} timezone ${timezoneAbbreviation}`;
+    document.getElementById("text").innerHTML =
+        `${name_weekday} ${day} ${month} ${year}<br/>${hour}:${minute}:${second} ${period} timezone ${timezoneAbbreviation}`;
     // timeDiv.innerHTML = hour + " : " + minute + " : " + second + " " + period;
 
     // Set Timer to 1 sec (1000 ms)
