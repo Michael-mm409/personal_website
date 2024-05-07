@@ -19,6 +19,9 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 header {
@@ -31,7 +34,8 @@ header {
 .title {
     font-size: 32px;
     font-weight: bold;
-    margin-top: 10px;
+    margin: 10px auto;
+    text-align: center;
 }
 
 nav {
@@ -114,7 +118,6 @@ form {
     text-align: center;
 }
 
-
 #google-image {
     display: inline;
     margin-right: 10px;
@@ -195,4 +198,9 @@ img {
     margin-right: auto;
     width: 80%;
     text-align: center;
+}
+
+#form-container .title {
+    text-align: center;
+    margin: 0 auto;
 }
