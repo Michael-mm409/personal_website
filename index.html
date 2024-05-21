@@ -18,8 +18,8 @@
         }
 
         .table-container .table-responsive {
-           width: calc(100% / 3 - 10px);   /* Divide the width equally among 3 tables and subtract margin */
-		   margin-right: 10px; /* Adjust margin as needed */
+            width: calc(100% / 3 - 10px);   /* Divide the width equally among 3 tables and subtract margin */
+            margin-right: 10px; /* Adjust margin as needed */
         }
 
         #imageContainers img {
@@ -27,12 +27,12 @@
             margin-left: auto;
             margin-right: auto;
             width: 80px;
-            height:60px;
+            height: 60px;
             text-align: center;
         }
+
         /* Optional: Adjust responsiveness */
         @media (max-width: 1000px) {
-            .table-container {
             .table-container {
                 flex-direction: column;
             }
@@ -49,16 +49,16 @@
         }
 
     </style>
-	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
 <header class="bg-light">
     <!-- Header content -->
     <div class="container">
         <div class="d-flex align-items-center">
-            <iframe class="datetime mr-3" src="datetime/datetime.html" width="220" height="100" frameborder="0"></iframe>
+            <iframe class="datetime mr-3" src="datetime/datetime.html" width="220" height="100"></iframe>
             <h1 class="title mb-0">Modern Portfolio</h1>
         </div>
     </div>
@@ -72,12 +72,11 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
                 <!-- Add more navigation items as needed -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Google Services</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
-                        <a class="dropdown-item" href="https://youtube.com">Youtube</a>
+                        <a class="dropdown-item" href="https://youtube.com">YouTube</a>
                         <!-- Add more dropdown items here -->
                         <a class="dropdown-item" href="https://photos.google.com/?tab=wq&pageId=none&pli=1">Google Photos</a>
                         <a class="dropdown-item" href="https://mail.google.com/">Gmail</a>
@@ -89,7 +88,7 @@
                         <a class="dropdown-item" href="https://maps.google.com">Maps</a>
                         <a class="dropdown-item" href="https://calendar.google.com/calendar">Google Calendar</a>
                         <a class="dropdown-item" href="https://docs.google.com/forms/">Google Forms</a>
-                        <a class="dropdown-item"href="https://sites.google.com/u/0/new?pli=1&authuser=0">Google Sites</a>
+                        <a class="dropdown-item" href="https://sites.google.com/u/0/new?pli=1&authuser=0">Google Sites</a>
                     </div>
                 </li>
                 <!-- Add more dropdown items as needed -->
@@ -99,7 +98,7 @@
                         <a class="dropdown-item" href="https://login.live.com">Personal Outlook Email</a>
                         <!-- Add more dropdown items here -->
                         <a class="dropdown-item" href="https://to-do.live.com/tasks/">Microsoft To Do</a>
-                        <a class="dropdown-item"href="https://web.skype.com/">Skype</a>
+                        <a class="dropdown-item" href="https://web.skype.com/">Skype</a>
                         <a class="dropdown-item" href="https://www.microsoft365.com/?auth=1">Microsoft 365</a>
                     </div>
                 </li>
@@ -110,14 +109,13 @@
                         <!-- Add more dropdown items here -->
                         <a class="dropdown-item" href="https://solss.uow.edu.au/sid/sols_login_ctl.login?p_message=SOLS_AUTH_ERR10">SOLs</a>
                         <a class="dropdown-item" href="https://moodle.uowplatform.edu.au/course/view.php?id=39610">Moodle</a>
-                        <a class="dropdown-item" href="https://courses.uow.edu.au/courses/current/766?offering=Wollongong-On-Campus">UOW Course Handbook</a>
+                        <a class="dropdown-item" href="https://courses.uow.edu.au/courses/2024/766?year=2024">UOW Course Handbook</a>
                         <a class="dropdown-item" href="https://edstem.org/au/login?redirect=%2Fau%2Fdashboard&auth=1">EdStem</a>
                         <a class="dropdown-item" href="https://uow-access.symplicity.com/students/index.php?s=home">Uni Support Portal</a>
                     </div>
                 </li>
                 <li class="nav-item"><a class="nav-link" href="https://github.com/GhostPrime1234">Portfolio</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-
             </ul>
         </div>
     </div>
@@ -127,16 +125,16 @@
     <div id="form-container" class="mt-3">
         <!-- Form container content -->
         <form action="https://www.google.com.au/search" method="get" target="_blank" class="form-inline">
-			<div class="input-group">
-				<img id="google-image" src="images/Email/google_logo.png" alt="Google Logo" class="mr-2" style="background-color:white; width:50px;">
-				<input name="q" placeholder="Search Google..." required id="google-input" class="form-control mr-2">
-				<div class="input-group-append">
-					<button type="submit" id="google-submit-button" class="btn btn-primary">Search</button>
-				</div>
-			</div>
-		</form>
-
-    </div><br>
+            <div class="input-group">
+                <img id="google-image" src="images/Email/google_logo.png" alt="Google Logo" class="mr-2" style="background-color:white; width:50px;">
+                <label for="google-input"></label><input name="q" placeholder="Search Google..." required id="google-input" class="form-control mr-2">
+                <div class="input-group-append">
+                    <button type="submit" id="google-submit-button" class="btn btn-primary">Search</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <br>
     <!-- Add more content here -->
     <div class="table-container" id="imageContainers">
         <div class="table-responsive">
@@ -152,133 +150,129 @@
                 <tr>
                     <td>
                         <a href="https://www.facebook.com/" target="_blank">
-                            <img src="images/Social/facebook.png" alt="Facebook website icon"/>
+                            <img src="images/Social/facebook.png" alt="Facebook website icon">
                         </a>
                     </td>
                     <td>
-                        <a href="https://news.google.com/" target="_blank">
-                            <img src="images/News/news.google.png" alt="Google News website icon">
+                        <a href="https://www.smh.com.au/" target="_blank">
+                            <img src="images/News/smh.png" alt="Sydney Morning Herald website icon">
                         </a>
                     </td>
                 </tr>
-                <!-- Add more rows as needed -->
                 <tr>
                     <td>
-                        <a href="https://www.twitter.com/" target="_blank">
+                        <a href="https://www.instagram.com/" target="_blank">
+                            <img src="images/Social/instagram.png" alt="Instagram website icon">
+                        </a>
+                    </td>
+                    <td>
+                        <a href="https://www.theguardian.com/au" target="_blank">
+                            <img src="images/News/guardian.png" alt="The Guardian website icon">
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://twitter.com/" target="_blank">
                             <img src="images/Social/twitter.png" alt="Twitter website icon">
                         </a>
                     </td>
                     <td>
-                        <a href="https://www.cnn.com/" target="_blank">
-                            <img src="images/News/cnn.png" alt="CNN News website icon">
+                        <a href="https://www.bbc.com/news/world" target="_blank">
+                            <img src="images/News/bbc.png" alt="BBC website icon">
                         </a>
                     </td>
                 </tr>
-                <tr>
-                    <td>
-                        <a href="https://www.linkedin.com/" target="_blank">
-                            <img src="images/Social/linkedin.png" style="width:100px; height:100px;" alt="LinkedIn website icon">
-                        </a>
-                    </td>
-                    <td>
-                        <a href="https://www.forbes.com/" target="_blank">
-                            <img src="images/News/forbes.png" style="width:100px; height:100px;" alt="Forbes website icon">
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="http://www.reddit.com/" target="_blank">
-                            <img src="images/Social/reditt.png"alt="Reddit website icon">
-                        </a>
-                    </td>
-                    <td>
-                        <a href="https://www.yahoo.com/news/" target="_blank">
-                            <img src="images/News/news.yahoo.png" style="width:150px; height:150px; vertical-align: top" alt="Yahoo News website icon">
-                        </a>
-                    </td>
-                </tr>
+                </tbody>
             </table>
         </div>
         <div class="table-responsive">
-            <table id="videoNEmailTable" class="table table-bordered table-striped">
-                <!-- Video and Email table content -->
-				<thead>
-					<tr>
-						<th>VIDEO</th>
-						<th>EMAIL</th>
-					</tr>
-				</thead>
+            <table id="studyToolsTable" class="table table-bordered table-striped">
+                <!-- Study Tools table content -->
+                <thead>
+                <tr>
+                    <th>STUDY</th>
+                    <th>TOOLS</th>
+                </tr>
+                </thead>
+                <tbody>
                 <tr>
                     <td>
-                        <a href="https://youtube.com" target="_blank">
-                            <img src="images/Videos/youtube.png" >
+                        <a href="https://www.khanacademy.org/" target="_blank">
+                            <img src="images/Study/khanacademy.png" alt="Khan Academy website icon">
                         </a>
                     </td>
                     <td>
-                        <a href="https://mail.google.com/" target="_blank">
-                            <img src="images/Email/gmail.png" >
+                        <a href="https://www.jetbrains.com/" target="_blank">
+                            <img src="images/Tools/jetbrains.png" alt="Sublime Text website icon">
                         </a>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <a href="https://netflix.com" target="_blank">
-                            <img src="images/Videos/netflix.png">
+                        <a href="https://www.coursera.org/" target="_blank">
+                            <img src="images/Study/coursera.png" alt="Coursera website icon">
                         </a>
                     </td>
                     <td>
-                        <a href="https://login.live.com" target="_blank">
-                            <img src="images/Email/outlook.png" >
+                        <a href="https://www.virtualbox.org/" target="_blank">
+                            <img src="images/Tools/virtualbox.png" alt="VirtualBox website icon">
                         </a>
                     </td>
-
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://www.codecademy.com/" target="_blank">
+                            <img src="images/Study/codeacademy.png" alt="Codecademy website icon">
+                        </a>
+                    </td>
+                    <td>
+                        <a href="https://visualstudio.microsoft.com/" target="_blank">
+                            <img src="images/Tools/visualstudiocode.png" alt="Visual Studio Code website icon">
+                        </a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="table-responsive">
+            <table id="entertainmentTable" class="table table-bordered table-striped">
+                <!-- Entertainment table content -->
+                <thead>
+                <tr>
+                    <th>ENTERTAINMENT</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        <a href="https://www.youtube.com/" target="_blank">
+                            <img src="images/Entertainment/youtube.png" alt="YouTube website icon">
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://www.netflix.com/" target="_blank">
+                            <img src="images/Entertainment/netflix.png" alt="Netflix website icon">
+                        </a>
+                    </td>
                 </tr>
                 <tr>
                     <td>
                         <a href="https://www.disneyplus.com/en-au" target="_blank">
-                            <img src="images/Videos/disney-plus.svg">
+                            <img src="images/Entertainment/disney-plus.svg" alt="Spotify website icon">
                         </a>
                     </td>
                 </tr>
-            </table>
-        </div>
-        <div class="table-responsive">
-            <table id="referenceShoppingTable" class="table table-bordered table-striped">
-                <!-- Reference and Shopping table content -->
-				<thead>
-                <tr>
-                    <th>REFERENCE</th>
-                    <th>SHOPPING</th>
-                </tr>
-				</thead>
-                <tr>
-                    <td>
-                        <a href="https://wikipedia.org" target="_blank">
-                            <img src="images/References/wikipedia.png" alt="Wikipedia website icon">
-                        </a>
-                    </td>
-                    <td>
-                        <a href="https://amazon.com.au" target="_blank">
-                            <img src="images/Shopping/amazon.png" alt="Amazon website"/>
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="https://dictionary.com" target="_blank">
-                            <img src="images/References/dictionary.png" alt="Dictionary website icon">
-                        </a>
-                    </td>
-                    <td>
-                        <a href="https://ebay.com.au" target="_blank">
-                            <img src="images/Shopping/ebay.png">
-                        </a>
-                    </td>
-                </tr>
+                </tbody>
             </table>
         </div>
     </div>
 </main>
+<footer class="bg-light text-center py-3">
+    <!-- Footer content -->
+    <p>&copy; 2024 Michael McMillan. All rights reserved.</p>
+</footer>
 </body>
 </html>
