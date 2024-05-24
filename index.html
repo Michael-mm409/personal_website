@@ -1,278 +1,345 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Portfolio</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="icon" type="image/png" href="images/favicon.ico">
-    <style>
-        #google-image {
-            background-color: transparent !important;
-        }
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Modern Portfolio</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="icon" type="image/png" href="images/favicon.ico">
+        <style>
+            #search-input {
+                background-color: transparent !important;
+            }
+            #search-engine-logo {
+                width: auto; /* Adjusted width to fill the container */
+                height: auto; /* Allows the height to adjust proportionally */
+                max-width: 50px; /* Limits the width to the desired size */
+                max-height: 50px; /* Limits the height to the desired size */
+                background-color: white;
+                object-fit: contain; /* Ensures the image fits within the specified dimensions */
+            }
 
-        /* Optional: Add styling for tables */
-        .table-container {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .table-container .table-responsive {
-            width: calc(100% / 3 - 10px);   /* Divide the width equally among 3 tables and subtract margin */
-            margin-right: 10px; /* Adjust margin as needed */
-        }
-
-        #imageContainers img {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            width: 80px;
-            height: 60px;
-            text-align: center;
-        }
-
-        /* Optional: Adjust responsiveness */
-        @media (max-width: 1000px) {
+            /* Optional: Add styling for tables */
             .table-container {
-                flex-direction: column;
+                display: flex;
+                justify-content: space-between;
             }
 
             .table-container .table-responsive {
-                width: 100%;
-                margin-bottom: 10px;
+                width: calc(100% / 3 - 10px);   /* Divide the width equally among 3 tables and subtract margin */
+                margin-right: 10px; /* Adjust margin as needed */
             }
-        }
 
-        /* Custom style for navbar text */
-        .navbar-nav .nav-link {
-            color: #333 !important; /* Darker color for the navbar text */
-        }
+            #imageContainers img {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 80px;
+                height: 60px;
+                text-align: center;
+            }
 
-    </style>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</head>
-<body>
-<header class="bg-light">
-    <!-- Header content -->
-    <div class="container">
-        <div class="d-flex align-items-center">
-            <iframe class="datetime mr-3" src="datetime/datetime.html" width="220" height="100"></iframe>
-            <h1 class="title mb-0">Modern Portfolio</h1>
-        </div>
-    </div>
-</header>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <!-- Navigation content -->
-    <div class="container">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                <!-- Add more navigation items as needed -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Google Services</a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
-                        <a class="dropdown-item" href="https://youtube.com">YouTube</a>
-                        <!-- Add more dropdown items here -->
-                        <a class="dropdown-item" href="https://photos.google.com/?tab=wq&pageId=none&pli=1">Google Photos</a>
-                        <a class="dropdown-item" href="https://mail.google.com/">Gmail</a>
-                        <a class="dropdown-item" href="https://drive.google.com/drive/u/0/my-drive">Google Drive</a>
-                        <a class="dropdown-item" href="https://docs.google.com/spreadsheets/u/0/?tgif=d&pli=1">Google Sheets</a>
-                        <a class="dropdown-item" href="https://docs.google.com/">Google Docs</a>
-                        <a class="dropdown-item" href="https://docs.google.com/presentation/u/0/?tgif=d&pli=1">Google Slides</a>
-                        <a class="dropdown-item" href="https://keep.google.com/u/0/#home">Google Keep</a>
-                        <a class="dropdown-item" href="https://maps.google.com">Maps</a>
-                        <a class="dropdown-item" href="https://calendar.google.com/calendar">Google Calendar</a>
-                        <a class="dropdown-item" href="https://docs.google.com/forms/">Google Forms</a>
-                        <a class="dropdown-item" href="https://sites.google.com/u/0/new?pli=1&authuser=0">Google Sites</a>
-                    </div>
-                </li>
-                <!-- Add more dropdown items as needed -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Microsoft</a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
-                        <a class="dropdown-item" href="https://login.live.com">Personal Outlook Email</a>
-                        <!-- Add more dropdown items here -->
-                        <a class="dropdown-item" href="https://to-do.live.com/tasks/">Microsoft To Do</a>
-                        <a class="dropdown-item" href="https://web.skype.com/">Skype</a>
-                        <a class="dropdown-item" href="https://www.microsoft365.com/?auth=1">Microsoft 365</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">University</a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
-                        <a class="dropdown-item" href="https://www.uow.edu.au/student/learning-co-op/">The Learning Co-Op</a>
-                        <!-- Add more dropdown items here -->
-                        <a class="dropdown-item" href="https://solss.uow.edu.au/sid/sols_login_ctl.login?p_message=SOLS_AUTH_ERR10">SOLs</a>
-                        <a class="dropdown-item" href="https://moodle.uowplatform.edu.au/course/view.php?id=39610">Moodle</a>
-                        <a class="dropdown-item" href="https://courses.uow.edu.au/courses/2024/766?year=2024">UOW Course Handbook</a>
-                        <a class="dropdown-item" href="https://edstem.org/au/login?redirect=%2Fau%2Fdashboard&auth=1">EdStem</a>
-                        <a class="dropdown-item" href="https://uow-access.symplicity.com/students/index.php?s=home">Uni Support Portal</a>
-                    </div>
-                </li>
-                <li class="nav-item"><a class="nav-link" href="https://github.com/GhostPrime1234">Portfolio</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
-<main class="container">
-    <!-- Your main content goes here -->
-    <div id="form-container" class="mt-3">
-        <!-- Form container content -->
-        <form action="https://www.google.com.au/search" method="get" target="_blank" class="form-inline">
-            <div class="input-group">
-                <img id="google-image" src="images/Email/google_logo.png" alt="Google Logo" class="mr-2" style="background-color:white; width:50px;">
-                <label for="google-input"></label><input name="q" placeholder="Search Google..." required id="google-input" class="form-control mr-2">
-                <div class="input-group-append">
-                    <button type="submit" id="google-submit-button" class="btn btn-primary">Search</button>
+            /* Optional: Adjust responsiveness */
+            @media (max-width: 1000px) {
+                .table-container {
+                    flex-direction: column;
+                }
+
+                .table-container .table-responsive {
+                    width: 100%;
+                    margin-bottom: 10px;
+                }
+            }
+
+            /* Custom style for navbar text */
+            .navbar-nav .nav-link {
+                color: #333 !important; /* Darker color for the navbar text */
+            }
+        </style>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <header class="bg-light">
+            <!-- Header content -->
+            <div class="container">
+                <div class="d-flex align-items-center">
+                    <iframe class="datetime mr-3" src="datetime/datetime.html" width="220" height="100" style="border:0"></iframe>
+                    <h1 class="title mb-0">Modern Portfolio</h1>
                 </div>
             </div>
-        </form>
-    </div>
-    <br>
-    <!-- Add more content here -->
-    <div class="table-container" id="imageContainers">
-        <div class="table-responsive">
-            <table id="socialNewsTable" class="table table-bordered table-striped">
-                <!-- Social and News table content -->
-                <thead>
-                <tr>
-                    <th>SOCIAL</th>
-                    <th>NEWS</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>
-                        <a href="https://www.facebook.com/" target="_blank">
-                            <img src="images/Social/facebook.png" alt="Facebook website icon">
-                        </a>
-                    </td>
-                    <td>
-                        <a href="https://www.smh.com.au/" target="_blank">
-                            <img src="images/News/smh.png" alt="Sydney Morning Herald website icon">
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="https://www.instagram.com/" target="_blank">
-                            <img src="images/Social/instagram.png" alt="Instagram website icon">
-                        </a>
-                    </td>
-                    <td>
-                        <a href="https://www.theguardian.com/au" target="_blank">
-                            <img src="images/News/guardian.png" alt="The Guardian website icon">
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="https://twitter.com/" target="_blank">
-                            <img src="images/Social/twitter.png" alt="Twitter website icon">
-                        </a>
-                    </td>
-                    <td>
-                        <a href="https://www.bbc.com/news/world" target="_blank">
-                            <img src="images/News/bbc.png" alt="BBC website icon">
-                        </a>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="table-responsive">
-            <table id="studyToolsTable" class="table table-bordered table-striped">
-                <!-- Study Tools table content -->
-                <thead>
-                <tr>
-                    <th>STUDY</th>
-                    <th>TOOLS</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>
-                        <a href="https://www.khanacademy.org/" target="_blank">
-                            <img src="images/Study/khanacademy.png" alt="Khan Academy website icon">
-                        </a>
-                    </td>
-                    <td>
-                        <a href="https://www.jetbrains.com/" target="_blank">
-                            <img src="images/Tools/jetbrains.png" alt="Sublime Text website icon">
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="https://www.coursera.org/" target="_blank">
-                            <img src="images/Study/coursera.png" alt="Coursera website icon">
-                        </a>
-                    </td>
-                    <td>
-                        <a href="https://www.virtualbox.org/" target="_blank">
-                            <img src="images/Tools/virtualbox.png" alt="VirtualBox website icon">
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="https://www.codecademy.com/" target="_blank">
-                            <img src="images/Study/codeacademy.png" alt="Codecademy website icon">
-                        </a>
-                    </td>
-                    <td>
-                        <a href="https://visualstudio.microsoft.com/" target="_blank">
-                            <img src="images/Tools/visualstudiocode.png" alt="Visual Studio Code website icon">
-                        </a>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="table-responsive">
-            <table id="entertainmentTable" class="table table-bordered table-striped">
-                <!-- Entertainment table content -->
-                <thead>
-                <tr>
-                    <th>ENTERTAINMENT</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>
-                        <a href="https://www.youtube.com/" target="_blank">
-                            <img src="images/Entertainment/youtube.png" alt="YouTube website icon">
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="https://www.netflix.com/" target="_blank">
-                            <img src="images/Entertainment/netflix.png" alt="Netflix website icon">
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="https://www.disneyplus.com/en-au" target="_blank">
-                            <img src="images/Entertainment/disney-plus.svg" alt="Spotify website icon">
-                        </a>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-</main>
-<footer class="bg-light text-center py-3">
-    <!-- Footer content -->
-    <p>&copy; 2024 Michael McMillan. All rights reserved.</p>
-</footer>
-</body>
+        </header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <!-- Navigation content -->
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                        <!-- Add more navigation items as needed -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Google Services</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                                <a class="dropdown-item" href="https://youtube.com">YouTube</a>
+                                <!-- Add more dropdown items here -->
+                                <a class="dropdown-item" href="https://photos.google.com/?tab=wq&pageId=none&pli=1">Google Photos</a>
+                                <a class="dropdown-item" href="https://mail.google.com/">Gmail</a>
+                                <a class="dropdown-item" href="https://drive.google.com/drive/u/0/my-drive">Google Drive</a>
+                                <a class="dropdown-item" href="https://docs.google.com/spreadsheets/u/0/?tgif=d&pli=1">Google Sheets</a>
+                                <a class="dropdown-item" href="https://docs.google.com/">Google Docs</a>
+                                <a class="dropdown-item" href="https://docs.google.com/presentation/u/0/?tgif=d&pli=1">Google Slides</a>
+                                <a class="dropdown-item" href="https://keep.google.com/u/0/#home">Google Keep</a>
+                                <a class="dropdown-item" href="https://maps.google.com">Maps</a>
+                                <a class="dropdown-item" href="https://calendar.google.com/calendar">Google Calendar</a>
+                                <a class="dropdown-item" href="https://docs.google.com/forms/">Google Forms</a>
+                                <a class="dropdown-item" href="https://sites.google.com/u/0/new?pli=1&authuser=0">Google Sites</a>
+                            </div>
+                        </li>
+                        <!-- Add more dropdown items as needed -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Microsoft</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                                <a class="dropdown-item" href="https://login.live.com">Personal Outlook Email</a>
+                                <!-- Add more dropdown items here -->
+                                <a class="dropdown-item" href="https://to-do.live.com/tasks/">Microsoft To Do</a>
+                                <a class="dropdown-item" href="https://web.skype.com/">Skype</a>
+                                <a class="dropdown-item" href="https://www.microsoft365.com/?auth=1">Microsoft 365</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">University</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
+                                <a class="dropdown-item" href="https://www.uow.edu.au/student/learning-co-op/">The Learning Co-Op</a>
+                                <!-- Add more dropdown items here -->
+                                <a class="dropdown-item" href="https://solss.uow.edu.au/sid/sols_login_ctl.login?p_message=SOLS_AUTH_ERR10">SOLs</a>
+                                <a class="dropdown-item" href="https://moodle.uowplatform.edu.au/course/view.php?id=39610">Moodle</a>
+                                <a class="dropdown-item" href="https://courses.uow.edu.au/courses/2024/766?year=2024">UOW Course Handbook</a>
+                                <a class="dropdown-item" href="https://edstem.org/au/login?redirect=%2Fau%2Fdashboard&auth=1">EdStem</a>
+                                <a class="dropdown-item" href="https://uow-access.symplicity.com/students/index.php?s=home">Uni Support Portal</a>
+                            </div>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="https://github.com/GhostPrime1234">Portfolio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <main class="container">
+            <!-- Your main content goes here -->
+            <div id="form-container" class="mt-3">
+                <!-- Form container content -->
+                <form id=search-form action="https://www.google.com.au/search" method="get" target="_blank" class="form-inline">
+                    <div class="input-group">
+                        <label for="search-engine">
+                            <select id="search-engine" class="form-control mr-2">
+                                <option value="https://www.google.com.au/search">Google</option>
+                                <option value="https://search.brave.com/search" selected>Brave</option>
+                                <option value="https://bing.com/search">Bing</option>
+                                <option value="https://search.yahoo.com/search">Yahoo</option>
+                                <option value="https://duckduckgo.com">Duck Duck Go</option>
+                                <option value="https://www.ecosia.org/search">Ecosia</option>
+                            </select>
+                        </label>
+                        <img id="search-engine-logo" src="images/Email/brave_logo.webp" alt="Brave Browser Logo" class="mr-2" style="background-color:white; width:50px;">
+                        <label for="search-input"></label><input name="q" placeholder="Search Brave..." required id="search-input" class="form-control mr-2">
+                        <div class="input-group-append">
+                            <button type="submit" id="google-submit-button" class="btn btn-primary">Search</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <script>
+                document.getElementById('search-engine').addEventListener('change', function() {
+                    let form = document.getElementById('search-form');
+                    let img = document.getElementById('search-engine-logo');
+                    let input = document.getElementById('search-input')
+                    let image_path = 'images/Email'
+                    form.action = this.value;
+
+                    // Update the logo based on the selected search engine
+                    switch(this.value) {
+                        case 'https://www.google.com.au/search':
+                            img.src = `${image_path}/google_logo.png`;
+                            img.alt = 'Google Logo';
+                            input.placeholder = 'Search Google...';
+                            break;
+                        case 'https://search.brave.com/search':
+                            img.src = `${image_path}/brave_logo.webp`;
+                            img.alt = 'Brave Browser Logo';
+                            input.placeholder = 'Search Brave...';
+                            break;
+                        case 'https://bing.com/search':
+                            img.src = `${image_path}/bing_logo.png`; // Update the path to Bing logo
+                            img.alt = 'Bing Logo';
+                            input.placeholder = 'Search Bing...';
+                            break;
+                        case 'https://www.ecosia.org/search':
+                            img.src = `${image_path}/ecosia_logo.png`;
+                            img.alt = 'Ecosia Logo';
+                            input.placeholder = 'Search Ecosia...';
+                            break;
+                        case 'https://search.yahoo.com/search':
+                            img.src = `${image_path}/yahoo_logo.png`;
+                            img.alt = 'Yahoo Logo';
+                            input.placeholder = 'Search Yahoo...';
+                            break;
+                        case 'https://duckduckgo.com':
+                            img.src = `${image_path}/duckduckgo_logo.png`;
+                            img.alt = 'Duck Duck Go Logo';
+                            input.placeholder = 'Search Duck Duck Go...';
+                            break;
+                        default:
+                            img.src = `${image_path}/brave_logo.webp`;
+                            img.alt = 'Brave Browser Logo';
+                            input.placeholder = 'Search Brave...';
+                    }
+                    console.log(img.src);
+                    console.log(img.width, img.height);
+                })
+            </script>
+            <br>
+            <!-- Add more content here -->
+            <div class="table-container" id="imageContainers">
+                <div class="table-responsive">
+                    <table id="socialNewsTable" class="table table-bordered table-striped">
+                        <!-- Social and News table content -->
+                        <thead>
+                        <tr>
+                            <th>SOCIAL</th>
+                            <th>NEWS</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>
+                                <a href="https://www.facebook.com/" target="_blank">
+                                    <img src="images/Social/facebook.png" alt="Facebook website icon">
+                                </a>
+                            </td>
+                            <td>
+                                <a href="https://www.smh.com.au/" target="_blank">
+                                    <img src="images/News/smh.png" alt="Sydney Morning Herald website icon">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="https://www.instagram.com/" target="_blank">
+                                    <img src="images/Social/instagram.png" alt="Instagram website icon">
+                                </a>
+                            </td>
+                            <td>
+                                <a href="https://www.theguardian.com/au" target="_blank">
+                                    <img src="images/News/guardian.png" alt="The Guardian website icon">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="https://twitter.com/" target="_blank">
+                                    <img src="images/Social/twitter.png" alt="Twitter website icon">
+                                </a>
+                            </td>
+                            <td>
+                                <a href="https://www.bbc.com/news/world" target="_blank">
+                                    <img src="images/News/bbc.png" alt="BBC website icon">
+                                </a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="table-responsive">
+                    <table id="studyToolsTable" class="table table-bordered table-striped">
+                        <!-- Study Tools table content -->
+                        <thead>
+                        <tr>
+                            <th>STUDY</th>
+                            <th>TOOLS</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>
+                                <a href="https://www.khanacademy.org/" target="_blank">
+                                    <img src="images/Study/khanacademy.png" alt="Khan Academy website icon">
+                                </a>
+                            </td>
+                            <td>
+                                <a href="https://www.jetbrains.com/" target="_blank">
+                                    <img src="images/Tools/jetbrains.png" alt="Sublime Text website icon">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="https://www.coursera.org/" target="_blank">
+                                    <img src="images/Study/coursera.png" alt="Coursera website icon">
+                                </a>
+                            </td>
+                            <td>
+                                <a href="https://www.virtualbox.org/" target="_blank">
+                                    <img src="images/Tools/virtualbox.png" alt="VirtualBox website icon">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="https://www.codecademy.com/" target="_blank">
+                                    <img src="images/Study/codeacademy.png" alt="Codecademy website icon">
+                                </a>
+                            </td>
+                            <td>
+                                <a href="https://visualstudio.microsoft.com/" target="_blank">
+                                    <img src="images/Tools/visualstudiocode.png" alt="Visual Studio Code website icon">
+                                </a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="table-responsive">
+                    <table id="entertainmentTable" class="table table-bordered table-striped">
+                        <!-- Entertainment table content -->
+                        <thead>
+                        <tr>
+                            <th>ENTERTAINMENT</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>
+                                <a href="https://www.youtube.com/" target="_blank">
+                                    <img src="images/Entertainment/youtube.png" alt="YouTube website icon">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="https://www.netflix.com/" target="_blank">
+                                    <img src="images/Entertainment/netflix.png" alt="Netflix website icon">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="https://www.disneyplus.com/en-au" target="_blank">
+                                    <img src="images/Entertainment/disney-plus.svg" alt="Spotify website icon">
+                                </a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+        <footer class="bg-light text-center py-3">
+            <!-- Footer content -->
+            <p>&copy; 2024 Michael McMillan. All rights reserved.</p>
+        </footer>
+    </body>
 </html>
