@@ -1,47 +1,56 @@
-document.getElementById('search-engine').addEventListener('change', function() {
-    let form = document.getElementById('search-form');
-    let img = document.getElementById('search-engine-logo');
-    let input = document.getElementById('search-input')
-    let image_path = 'images/Email'
-    form.action = this.value;
+document.addEventListener('DOMContentLoaded', function() {
+    const searchForm = document.getElementById('search-form');
+    const searchEngineSelect = document.getElementById('search-engine');
+    const searchEngineLogo = document.getElementById('search-engine-logo');
+    const searchInput = document.getElementById('search-input');
 
-    // Update the logo based on the selected search engine
-    switch(this.value) {
-        case 'https://www.google.com.au/search':
-            img.src = `${image_path}/google_logo.png`;
-            img.alt = 'Google Logo';
-            input.placeholder = 'Search Google...';
-            break;
-        case 'https://search.brave.com/search':
-            img.src = `${image_path}/brave_logo.webp`;
-            img.alt = 'Brave Browser Logo';
-            input.placeholder = 'Search Brave...';
-            break;
-        case 'https://bing.com/search':
-            img.src = `${image_path}/bing_logo.png`; // Update the path to Bing logo
-            img.alt = 'Bing Logo';
-            input.placeholder = 'Search Bing...';
-            break;
-        case 'https://www.ecosia.org/search':
-            img.src = `${image_path}/ecosia_logo.png`;
-            img.alt = 'Ecosia Logo';
-            input.placeholder = 'Search Ecosia...';
-            break;
-        case 'https://search.yahoo.com/search':
-            img.src = `${image_path}/yahoo_logo.png`;
-            img.alt = 'Yahoo Logo';
-            input.placeholder = 'Search Yahoo...';
-            break;
-        case 'https://duckduckgo.com':
-            img.src = `${image_path}/duckduckgo_logo.png`;
-            img.alt = 'Duck Duck Go Logo';
-            input.placeholder = 'Search Duck Duck Go...';
-            break;
-        default:
-            img.src = `${image_path}/brave_logo.webp`;
-            img.alt = 'Brave Browser Logo';
-            input.placeholder = 'Search Brave...';
-    }
-    console.log(img.src);
-    console.log(img.width, img.height);
-})
+    searchEngineSelect.addEventListener('change', function() {
+        const selectedEngine = searchEngineSelect.value;
+        searchForm.action = selectedEngine;
+
+        let logoSrc;
+        let placeholderText;
+        let logoAltText;
+
+        switch (selectedEngine) {
+            case 'https://search.brave.com/search':
+                logoSrc = 'images/Email/brave_logo.webp';
+                placeholderText = 'Search Brave...';
+                logoAltText = 'Brave Browser Logo';
+                break;
+            case 'https://www.google.com.au/search':
+                logoSrc = 'images/Email/google_logo.png';
+                placeholderText = 'Search Google...';
+                logoAltText = 'Google Logo';
+                break;
+            case 'https://bing.com/search':
+                logoSrc = 'images/Email/bing_logo.png';
+                placeholderText = 'Search Bing...';
+                logoAltText = 'Bing Logo'
+                break;
+            case 'https://search.yahoo.com/search':
+                logoSrc = 'images/Email/yahoo_logo.png';
+                placeholderText = 'Search Yahoo...';
+                logoAltText = 'Yahoo Logo';
+                break;
+            case 'https://duckduckgo.com':
+                logoSrc = 'images/Email/duckduckgo_logo.png';
+                placeholderText = 'Search DuckDuckGo...';
+                logoAltText = 'Duck Duck Go Logo';
+                break;
+            case 'https://www.ecosia.org/search':
+                logoSrc = 'images/Email/ecosia_logo.png';
+                placeholderText = 'Search Ecosia...';
+                logoAltText = 'Ecosia Logo';
+                break;
+            default:
+                logoSrc = 'images/Email/brave_logo.webp';
+                placeholderText = 'Search Brave...';
+                logoAltText = 'Brave Browser Logo';
+        }
+
+        searchEngineLogo.src = logoSrc;
+        searchInput.placeholder = placeholderText;
+        searchEngineLogo.alt = logoAltText;
+    });
+});
