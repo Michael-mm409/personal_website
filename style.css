@@ -1,206 +1,81 @@
-/* Reset styles */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-/* Global styles */
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f8f8f8;
-    color: #333;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-header {
-    background-color: #4285f4;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-}
-
-.title {
-    font-size: 32px;
-    font-weight: bold;
-    margin: 10px auto;
-    text-align: center;
-}
-
-nav {
-    background-color: #333;
-}
-
-nav ul {
-    list-style-type: none;
-    display: flex;
-    justify-content: center;
-    padding: 10px 0;
-}
-
-nav ul li {
-    margin-right: 20px;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-    transition: color 0.3s;
-}
-
-nav ul li a:hover {
-    color: #ff8800;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    border-radius: 5px;
-    padding: 5px 0;
-    animation: fadeIn 0.3s ease-out;
-}
-
-.dropdown-content a {
-    color: black;
-    padding: 8px 16px;
-    text-decoration: none;
-    display: block;
-    transition: background-color 0.3s;
-}
-
-.dropdown-content a:hover {
-    background-color: #ddd;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-main {
-    text-align: center;
-    padding: 40px 0;
-}
-
 #form-container {
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    margin-top: 20px; /* Adjust as needed */
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center items vertically */
+    margin-bottom: 10px; /* Add margin for spacing */
 }
 
-form {
-    max-width: 100%; /* Adjust if needed */
-    text-align: center;
+#search-input {
+    background-color: transparent !important;
+    border: 1px solid #ced4da !important; /* Gray border */
+    border-radius: 5px; /* Rounded corners */
 }
 
-#google-image {
-    display: inline;
-    margin-right: 10px;
-    height: auto;
-    width: 100px;
+#search-input:focus {
+    border-color: #80bdff !important; /* Blue border when input is focused */
 }
 
-#google-input {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-    width: 300px;
-    height: 40px;
+#search-engine-logo {
+    width: auto; /* Adjusted width to fill the container */
+    height: auto; /* Allows the height to adjust proportionally */
+    max-width: 50px; /* Limits the width to the desired size */
+    max-height: 50px; /* Limits the height to the desired size */
+    background-color: #e9ecef; /* Light gray background color for the logo container */
+    margin-right: 5px; /* Add spacing between logo and input */
+    object-fit: contain; /* Ensures the image fits within the specified dimensions */
 }
 
 #google-submit-button {
-    margin-left: 10px;
-    width: auto;
-    height: 50px;
-    padding: 10px 20px;
-    background-color: #4285f4;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
+    background-color: #007bff; /* Blue background color for the search button */
+    border-color: #007bff; /* Blue border color for the search button */
+    border-radius: 5px; /* Rounded corners */
 }
 
-button:hover,
 #google-submit-button:hover {
-    background-color: #357ae8;
+    background-color: #0056b3; /* Darker blue background color on hover */
+    border-color: #0056b3; /* Darker blue border color on hover */
 }
 
-button:hover {
-    background-color: #357ae8;
+
+#search-engine {
+    background-color: #f8f9fa !important; /* Light gray background color for the dropdown */
+    border: 1px solid #ced4da !important; /* Gray border color for the dropdown */
+    border-radius: 5px; /* Rounded corners */
 }
 
-#table-containers {
+
+/* Optional: Add styling for tables */
+.table-container {
     display: flex;
     justify-content: space-between;
-    max-height: 100px;
-    padding: 20px;
 }
 
-#referenceShoppingTable td {
-    max-height: 100px;
+.table-container .table-responsive {
+    width: calc(100% / 3 - 10px);   /* Divide the width equally among 3 tables and subtract margin */
+    margin-right: 10px; /* Adjust margin as needed */
 }
 
-table {
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    height: 100px;
-    text-align: left;
-    vertical-align: middle;
-    background-color: #ffffff;
-}
-
-th {
-    background-color: #a6e0e9;
-    border: 1px solid #ddd;
-    padding: 8px;
-    height: 12px;
-    text-align: left;
-}
-
-img {
+#imageContainers img {
     display: block;
-    max-width: 80%;
-    height: auto;
     margin-left: auto;
     margin-right: auto;
-    width: 80%;
+    width: 80px;
+    height: 60px;
     text-align: center;
 }
 
-#form-container .title {
-    text-align: center;
-    margin: 0 auto;
+/* Optional: Adjust responsiveness */
+@media (max-width: 1000px) {
+    .table-container {
+        flex-direction: column;
+    }
+
+    .table-container .table-responsive {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+/* Custom style for navbar text */
+.navbar-nav .nav-link {
+    color: #333 !important; /* Darker color for the navbar text */
 }
