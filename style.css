@@ -80,12 +80,5 @@
     color: #333 !important; /* Darker color for the navbar text */
 }
 
-#imageContainers img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50px; /* Set desired width */
-    height: 50px; /* Set desired height */
-    text-align: center;
-}
+
 
