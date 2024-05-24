@@ -7,17 +7,50 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <link rel="icon" type="image/png" href="images/favicon.ico">
         <style>
+            #form-container {
+                display: flex; /* Use flexbox for alignment */
+                align-items: center; /* Center items vertically */
+                margin-bottom: 10px; /* Add margin for spacing */
+            }
+
             #search-input {
                 background-color: transparent !important;
+                border: 1px solid #ced4da !important; /* Gray border */
+                border-radius: 5px; /* Rounded corners */
             }
+
+            #search-input:focus {
+                border-color: #80bdff !important; /* Blue border when input is focused */
+            }
+
             #search-engine-logo {
                 width: auto; /* Adjusted width to fill the container */
                 height: auto; /* Allows the height to adjust proportionally */
                 max-width: 50px; /* Limits the width to the desired size */
                 max-height: 50px; /* Limits the height to the desired size */
-                background-color: white;
+                background-color: #e9ecef; /* Light gray background color for the logo container */
+                margin-right: 5px; /* Add spacing between logo and input */
                 object-fit: contain; /* Ensures the image fits within the specified dimensions */
             }
+
+            #google-submit-button {
+                background-color: #007bff; /* Blue background color for the search button */
+                border-color: #007bff; /* Blue border color for the search button */
+                border-radius: 5px; /* Rounded corners */
+            }
+
+            #google-submit-button:hover {
+                background-color: #0056b3; /* Darker blue background color on hover */
+                border-color: #0056b3; /* Darker blue border color on hover */
+            }
+
+
+            #search-engine {
+                background-color: #f8f9fa !important; /* Light gray background color for the dropdown */
+                border: 1px solid #ced4da !important; /* Gray border color for the dropdown */
+                border-radius: 5px; /* Rounded corners */
+            }
+
 
             /* Optional: Add styling for tables */
             .table-container {
@@ -56,55 +89,6 @@
                 color: #333 !important; /* Darker color for the navbar text */
             }
         </style>
-        <script>
-            document.getElementById('search-engine').addEventListener('change', function() {
-                let form = document.getElementById('search-form');
-                let img = document.getElementById('search-engine-logo');
-                let input = document.getElementById('search-input')
-                let image_path = 'images/Email'
-                form.action = this.value;
-
-                // Update the logo based on the selected search engine
-                switch(this.value) {
-                    case 'https://www.google.com.au/search':
-                        img.src = `${image_path}/google_logo.png`;
-                        img.alt = 'Google Logo';
-                        input.placeholder = 'Search Google...';
-                        break;
-                    case 'https://search.brave.com/search':
-                        img.src = `${image_path}/brave_logo.webp`;
-                        img.alt = 'Brave Browser Logo';
-                        input.placeholder = 'Search Brave...';
-                        break;
-                    case 'https://bing.com/search':
-                        img.src = `${image_path}/bing_logo.png`; // Update the path to Bing logo
-                        img.alt = 'Bing Logo';
-                        input.placeholder = 'Search Bing...';
-                        break;
-                    case 'https://www.ecosia.org/search':
-                        img.src = `${image_path}/ecosia_logo.png`;
-                        img.alt = 'Ecosia Logo';
-                        input.placeholder = 'Search Ecosia...';
-                        break;
-                    case 'https://search.yahoo.com/search':
-                        img.src = `${image_path}/yahoo_logo.png`;
-                        img.alt = 'Yahoo Logo';
-                        input.placeholder = 'Search Yahoo...';
-                        break;
-                    case 'https://duckduckgo.com':
-                        img.src = `${image_path}/duckduckgo_logo.png`;
-                        img.alt = 'Duck Duck Go Logo';
-                        input.placeholder = 'Search Duck Duck Go...';
-                        break;
-                    default:
-                        img.src = `${image_path}/brave_logo.webp`;
-                        img.alt = 'Brave Browser Logo';
-                        input.placeholder = 'Search Brave...';
-                }
-                console.log(img.src);
-                console.log(img.width, img.height);
-            })
-        </script>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -200,6 +184,56 @@
                     </div>
                 </form>
             </div>
+
+            <script>
+                document.getElementById('search-engine').addEventListener('change', function() {
+                    let form = document.getElementById('search-form');
+                    let img = document.getElementById('search-engine-logo');
+                    let input = document.getElementById('search-input')
+                    let image_path = 'images/Email'
+                    form.action = this.value;
+
+                    // Update the logo based on the selected search engine
+                    switch(this.value) {
+                        case 'https://www.google.com.au/search':
+                            img.src = `${image_path}/google_logo.png`;
+                            img.alt = 'Google Logo';
+                            input.placeholder = 'Search Google...';
+                            break;
+                        case 'https://search.brave.com/search':
+                            img.src = `${image_path}/brave_logo.webp`;
+                            img.alt = 'Brave Browser Logo';
+                            input.placeholder = 'Search Brave...';
+                            break;
+                        case 'https://bing.com/search':
+                            img.src = `${image_path}/bing_logo.png`; // Update the path to Bing logo
+                            img.alt = 'Bing Logo';
+                            input.placeholder = 'Search Bing...';
+                            break;
+                        case 'https://www.ecosia.org/search':
+                            img.src = `${image_path}/ecosia_logo.png`;
+                            img.alt = 'Ecosia Logo';
+                            input.placeholder = 'Search Ecosia...';
+                            break;
+                        case 'https://search.yahoo.com/search':
+                            img.src = `${image_path}/yahoo_logo.png`;
+                            img.alt = 'Yahoo Logo';
+                            input.placeholder = 'Search Yahoo...';
+                            break;
+                        case 'https://duckduckgo.com':
+                            img.src = `${image_path}/duckduckgo_logo.png`;
+                            img.alt = 'Duck Duck Go Logo';
+                            input.placeholder = 'Search Duck Duck Go...';
+                            break;
+                        default:
+                            img.src = `${image_path}/brave_logo.webp`;
+                            img.alt = 'Brave Browser Logo';
+                            input.placeholder = 'Search Brave...';
+                    }
+                    console.log(img.src);
+                    console.log(img.width, img.height);
+                })
+            </script>
             <br>
             <!-- Add more content here -->
             <div class="table-container" id="imageContainers">
