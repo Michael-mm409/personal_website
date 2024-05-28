@@ -47,7 +47,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 logoSrc = 'images/Email/brave_logo.webp';
                 placeholderText = 'Search Brave...';
                 logoAltText = 'Brave Browser Logo';
-                searchForm.action = 'https://search.brave.com/search';
         }
 
         searchEngineLogo.src = logoSrc;
