@@ -1,0 +1,48 @@
+FUNCTION handleSearchEngineSelection() RETURNS VOID
+    GET the element with id 'search-form' and assign to searchForm 
+    GET the element with id 'search-engine' and assign to searchEngineSelect
+    GET the element with id 'search-input' and assign to search input
+
+    ON change event of searchEngineSelect DO
+        SET selectedEngine to searchEngineSelect.value
+        SET searchForm.action to selectedEngine
+
+        DECLARE logoSrc
+        DECLARE placeholderText
+        DECLARE logoAltText
+
+        SWTICH selectedEngine
+             CASE 'https://search.brave.com/search':
+                SET logoSrc to 'images/Email/brave_logo.webp'
+                SET placeholderText to 'Search Brave...'
+                SET logoAltText to 'Brave Browser Logo'
+            CASE 'https://www.google.com.au/search':
+                SET logoSrc to 'images/Email/google_logo.png'
+                SET placeholderText to 'Search Google...'
+                SET logoAltText to 'Google Logo'
+            CASE 'https://bing.com/search':
+                SET logoSrc to 'images/Email/bing_logo.png'
+                SET placeholderText to 'Search Bing...'
+                SET logoAltText to 'Bing Logo'
+            CASE 'https://search.yahoo.com/search':
+                SET logoSrc to 'images/Email/yahoo_logo.png'
+                SET placeholderText to 'Search Yahoo...'
+                SET logoAltText to 'Yahoo Logo'
+            CASE 'https://duckduckgo.com':
+                SET logoSrc to 'images/Email/duckduckgo_logo.png'
+                SET placeholderText to 'Search DuckDuckGo...'
+                SET logoAltText to 'Duck Duck Go Logo'
+            CASE 'https://www.ecosia.org/search':
+                SET logoSrc to 'images/Email/ecosia_logo.png'
+                SET placeholderText to 'Search Ecosia...'
+                SET logoAltText to 'Ecosia Logo'
+            DEFAULT:
+                 SET logoSrc to 'images/Email/brave_logo.webp'
+                SET placeholderText to 'Search Brave...'
+                SET logoAltText to 'Brave Browser Logo'
+        END SWITCH
+
+        SET searchEngineLogo.src to logoSrc
+        SET searchInput.placeholder to placeholderText
+        SET searchEngineLogo.alt to logoAltText
+END FUNCTION
