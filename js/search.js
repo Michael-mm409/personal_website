@@ -14,37 +14,37 @@ function handleSearchEngineSelection() {
 
         switch (selectedEngine) {
             case 'https://search.brave.com/search':
-                logoSrc = 'images/Email/brave_logo.webp';
+                logoSrc = 'images/email/brave_logo.webp';
                 placeholderText = 'Search Brave...';
                 logoAltText = 'Brave Browser Logo';
                 break;
             case 'https://www.google.com.au/search':
-                logoSrc = 'images/Email/google_logo.png';
+                logoSrc = 'images/email/google_logo.png';
                 placeholderText = 'Search Google...';
                 logoAltText = 'Google Logo';
                 break;
             case 'https://bing.com/search':
-                logoSrc = 'images/Email/bing_logo.png';
+                logoSrc = 'images/email/bing_logo.png';
                 placeholderText = 'Search Bing...';
                 logoAltText = 'Bing Logo'
                 break;
             case 'https://search.yahoo.com/search':
-                logoSrc = 'images/Email/yahoo_logo.png';
+                logoSrc = 'images/email/yahoo_logo.png';
                 placeholderText = 'Search Yahoo...';
                 logoAltText = 'Yahoo Logo';
                 break;
             case 'https://duckduckgo.com':
-                logoSrc = 'images/Email/duckduckgo_logo.png';
+                logoSrc = 'images/email/duckduckgo_logo.png';
                 placeholderText = 'Search DuckDuckGo...';
                 logoAltText = 'Duck Duck Go Logo';
                 break;
             case 'https://www.ecosia.org/search':
-                logoSrc = 'images/Email/ecosia_logo.png';
+                logoSrc = 'images/email/ecosia_logo.png';
                 placeholderText = 'Search Ecosia...';
                 logoAltText = 'Ecosia Logo';
                 break;
             default:
-                logoSrc = 'images/Email/brave_logo.webp';
+                logoSrc = 'images/email/brave_logo.webp';
                 placeholderText = 'Search Brave...';
                 logoAltText = 'Brave Browser Logo';
         }
