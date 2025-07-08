@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+function handleSearchEngineSelection() {
     const searchForm = document.getElementById('search-form');
     const searchEngineSelect = document.getElementById('search-engine');
     const searchEngineLogo = document.getElementById('search-engine-logo');
@@ -53,4 +53,6 @@ document.addEventListener('DOMContentLoaded', function() {
         searchInput.placeholder = placeholderText;
         searchEngineLogo.alt = logoAltText;
     });
-});
+};
+
+document.addEventListener('DOMContentLoaded', handleSearchEngineSelection);
