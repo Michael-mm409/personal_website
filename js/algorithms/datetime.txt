@@ -1,0 +1,55 @@
+FUNCTION time() RETURNS VOID
+    CREATE date as a new Date object
+
+    SET hour to current hour from date
+    SET minute to current minute from date
+    SET second to current second from date
+
+    INITIALISE period as an empty string
+
+    IF hour >= 12 THEN
+        SET period to "PM"
+    ELSE
+        SET PERIOD to "AM"
+    END IF
+
+    SET weekday to list of weekday names
+
+    IF hour == 0 THEN
+        SET hour to 12
+    ELSE IF hour > 12 THEN
+        SET hour to hour - 12
+    END IF
+
+    SET name_weekday to first 3 letters of weekday name for current day, in uppercase
+
+    SET day to current day of month, padded to 2 digits
+    SET month to current month name, 3 letters, uppercase
+    SET year to current year
+
+    SET timezone to substring of date's time string starting at position 18
+    SET timeAbbreviation to empty string
+    SET words to list of word matches in timezone
+
+    FOR EACH work in words DO
+        APPEND first character of word to timezoneAbbreviation
+    END FOR
+
+    SET hour to update(hour)
+    SET minute to update(minute)
+    SET second to update(second)
+
+    SET innerHTML of element with id "text" to:
+        name_weekday, day, month, year, line break,
+        hour:minute:second, period, "timezone", timezoneAbbreviation
+
+    CALL setTimeout to run time() again after 1000 milliseconds
+END FUNCTION
+
+FUNCTION update(integer t) RETURNS STRING
+    IF t < 10 THEN
+        RETURN "0" + t
+    ELSE
+        RETURN t
+    END IF
+END FUNCTION
