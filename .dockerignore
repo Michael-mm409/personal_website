@@ -1,0 +1,20 @@
+# Ignore Git metadata
+.git
+.gitignore
+
+# Node and dependency folders (if ever added)
+node_modules
+npm-debug.log
+yarn.lock
+pnpm-lock.yaml
+
+# Docker files themselves
+Dockerfile
+.dockerignore
+
+# Editor/OS junk
+.vscode
+.idea
+.DS_Store
+*.swp
+*.swo
