@@ -1,45 +1,66 @@
 #form-container {
-    display: flex; /* Use flexbox for alignment */
-    align-items: center; /* Center items vertically */
-    margin-bottom: 10px; /* Add margin for spacing */
+    display: flex;
+    /* Use flexbox for alignment */
+    align-items: center;
+    /* Center items vertically */
+    margin-bottom: 10px;
+    /* Add margin for spacing */
 }
 
 #search-input {
     background-color: transparent !important;
-    border: 1px solid #ced4da !important; /* Gray border */
-    border-radius: 5px; /* Rounded corners */
+    border: 1px solid #ced4da !important;
+    /* Gray border */
+    border-radius: 5px;
+    /* Rounded corners */
 }
 
 #search-input:focus {
-    border-color: #80bdff !important; /* Blue border when input is focused */
+    border-color: #80bdff !important;
+    /* Blue border when input is focused */
 }
 
 #search-engine-logo {
-    width: auto; /* Adjusted width to fill the container */
-    height: auto; /* Allows the height to adjust proportionally */
-    max-width: 50px; /* Limits the width to the desired size */
-    max-height: 50px; /* Limits the height to the desired size */
-    background-color: #e9ecef; /* Light gray background color for the logo container */
-    margin-right: 5px; /* Add spacing between logo and input */
-    object-fit: contain; /* Ensures the image fits within the specified dimensions */
+    width: auto;
+    /* Adjusted width to fill the container */
+    height: auto;
+    /* Allows the height to adjust proportionally */
+    max-width: 50px;
+    /* Limits the width to the desired size */
+    max-height: 50px;
+    /* Limits the height to the desired size */
+    background-color: #e9ecef;
+    /* Light gray background color for the logo container */
+    margin-right: 5px;
+    /* Add spacing between logo and input */
+    object-fit: contain;
+    /* Ensures the image fits within the specified dimensions */
 }
 
 #google-submit-button {
-    background-color: #007bff; /* Blue background color for the search button */
-    border-color: #007bff; /* Blue border color for the search button */
-    border-radius: 5px; /* Rounded corners */
+    background-color: #007bff;
+    /* Blue background color for the search button */
+    border-color: #007bff;
+    /* Blue border color for the search button */
+    border-radius: 5px;
+    /* Rounded corners */
 }
 
 #google-submit-button:hover {
-    background-color: #0056b3; /* Darker blue background color on hover */
-    border-color: #0056b3; /* Darker blue border color on hover */
+    background-color: #0056b3;
+    /* Darker blue background color on hover */
+    border-color: #0056b3;
+    /* Darker blue border color on hover */
 }
 
 
 #search-engine {
-    background-color: #f8f9fa !important; /* Light gray background color for the dropdown */
-    border: 1px solid #ced4da !important; /* Gray border color for the dropdown */
-    border-radius: 5px; /* Rounded corners */
+    background-color: #f8f9fa !important;
+    /* Light gray background color for the dropdown */
+    border: 1px solid #ced4da !important;
+    /* Gray border color for the dropdown */
+    border-radius: 5px;
+    /* Rounded corners */
 }
 
 
@@ -50,8 +71,10 @@
 }
 
 .table-container .table-responsive {
-    width: calc(100% / 3 - 10px);   /* Divide the width equally among 3 tables and subtract margin */
-    margin-right: 10px; /* Adjust margin as needed */
+    width: calc(100% / 3 - 10px);
+    /* Divide the width equally among 3 tables and subtract margin */
+    margin-right: 10px;
+    /* Adjust margin as needed */
 }
 
 #imageContainers img {
@@ -77,8 +100,55 @@
 
 /* Custom style for navbar text */
 .navbar-nav .nav-link {
-    color: #333 !important; /* Darker color for the navbar text */
+    color: #333 !important;
+    /* Darker color for the navbar text */
 }
 
+/* ---- About page styling ---- */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #f5f7fb;
+}
 
+.about-page {
+    max-width: 900px;
+}
 
+.about-page section {
+    background-color: #ffffff;
+    border-radius: 0.75rem;
+    padding: 1.75rem 2rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+}
+
+.about-page h2 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.about-page h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.about-page p {
+    line-height: 1.7;
+    color: #444;
+}
+
+.about-page ul {
+    padding-left: 1.2rem;
+}
+
+.about-page a {
+    color: #0d6efd;
+}
+
+.about-page a:hover {
+    text-decoration: none;
+    color: #0b5ed7;
+}
