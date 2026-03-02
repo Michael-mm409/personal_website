@@ -1,71 +1,79 @@
 function time() {
-    // Creating object of the Date class
+    // 1. Define your target timezones
+    const timezones = [
+        { name: "Sydney", tz: "Australia/Sydney" },
+        { name: "Brisbane", tz: "Australia/Brisbane" }
+    ];
+
+    // 2. Get the current moment
     let date = new Date();
 
-    // Get current hour
-    let hour = date.getHours();
-    // Get current minute
-    let minute = date.getMinutes();
-    // Get current second
-    let second = date.getSeconds();
+    // 3. Build the display for all timezones
+    let displayHTML = "";
 
-    // variable to store AM / PM
-    let period = "";
+    timezones.forEach((tzData, index) => {
+        // 4. Configure the formatter for the target timezone
+        let formatter = new Intl.DateTimeFormat('en-AU', {
+            timeZone: tzData.tz,
+            hour12: false,
+            hour: 'numeric',
+            minute: 'numeric',
+            second: 'numeric',
+            weekday: 'long',
+            day: '2-digit',
+            month: 'short',
+            year: 'numeric',
+            timeZoneName: 'short'
+        });
 
-    // Assigning AM / PM according to the current hour
-    if (hour >= 12) {
-        period = "PM";
-    } else {
-        period = "AM";
+        // 5. Breakdown the formatted time into usable parts
+        const parts = formatter.formatToParts(date);
+        const dateValues = {};
+        parts.forEach(({type, value}) => {
+            dateValues[type] = value;
+        });
+
+        // 6. Extract values
+        let hour = parseInt(dateValues.hour);
+        let minute = dateValues.minute;
+        let second = dateValues.second;
+        let day = dateValues.day;
+        let month = dateValues.month.toUpperCase();
+        let year = dateValues.year;
+        let name_weekday = dateValues.weekday.slice(0, 3).toUpperCase();
+        let timezoneAbbreviation = dateValues.timeZoneName;
+
+        // 7. Standardize formatting (leading zeros)
+        // No padding - use values as-is
+
+        // 8. Build the timezone display
+        displayHTML += `<strong>${tzData.name}:</strong> ${name_weekday} ${day} ${month} ${year}<br/>${hour}:${minute}:${second} timezone ${timezoneAbbreviation}`;
+        
+        // Add line break between timezones
+        if (index < timezones.length - 1) {
+            displayHTML += "<br/><br/>";
+        }
+    });
+
+    // 10. Update the DOM element
+    const clockElement = document.getElementById("text");
+    if (clockElement) {
+        clockElement.innerHTML = displayHTML;
     }
-    const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 
-    // Converting the hour in 12-hour format
-    if (hour === 0) {
-        hour = 12;
-    } else if (hour > 12) {
-        hour = hour - 12;
-    }
-
-    // Get the name of the weekday
-    let name_weekday = weekday[date.getDay()].slice(0,3).toUpperCase();
-
-    // Updating hour, minute, and second
-    let day = ("0" + date.getDate()).slice(-2);
-    let month = date.toLocaleString('default', {month: 'short'}).toUpperCase();
-    let year = date.getFullYear();
-    let timezone = date.toTimeString().substring(18,date.toTimeString().length);
-    let timezoneAbbreviation = "";
-    let words = timezone.match(/\w+/g);
-
-    // console.log(words)
-    for (let index=0; index < words.length; index++) {
-        timezoneAbbreviation += words[index][0]
-
-    }
-    hour = update(hour);
-    minute = update(minute);
-    second = update(second);
-
-
-    // Adding time elements to the div
-    document.getElementById("text").innerHTML =
-        `${name_weekday} ${day} ${month} ${year}<br/>${hour}:${minute}:${second} ${period} timezone ${timezoneAbbreviation}`;
-    // timeDiv.innerHTML = hour + " : " + minute + " : " + second + " " + period;
-
-    // Set Timer to 1 sec (1000 ms)
+    // 11. Schedule next update
     setTimeout(time, 1000);
 }
 
-// Function to update time elements if they are less than 10
-// Append 0 before time elements if they are less than 10
+/**
+ * Prepends a leading zero to numbers less than 10
+ */
 function update(t) {
-    // return t < 10 ? "0" + t : t;// Ternary operator
-    // or
     if (t < 10) {
         return "0" + t;
-    }
-    else {
+    } else {
         return t;
     }
 }
+
+document.addEventListener('DOMContentLoaded', time);
