@@ -104,10 +104,80 @@
     /* Darker color for the navbar text */
 }
 
+/* ---- Mobile responsiveness ---- */
+@media (max-width: 576px) {
+    /* Prevent any element from causing horizontal scroll */
+    *, *::before, *::after {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Header: stack datetime above title on small screens */
+    header .d-flex {
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 0.25rem;
+    }
+
+    h1.title {
+        font-size: 1.3rem;
+        word-break: break-word;
+    }
+
+    /* Search form: stack elements vertically */
+    #form-container {
+        display: block;
+    }
+
+    #search-form {
+        display: block;
+        width: 100%;
+    }
+
+    #search-form .input-group {
+        flex-direction: column;
+        align-items: stretch;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    #search-form label {
+        display: block;
+        width: 100%;
+        margin: 0 0 0.4rem 0;
+    }
+
+    #search-engine {
+        width: 100%;
+        margin-right: 0 !important;
+    }
+
+    #search-engine-logo {
+        display: none;
+    }
+
+    #search-input {
+        width: 100%;
+        margin-right: 0 !important;
+    }
+
+    #search-form .input-group-append {
+        width: 100%;
+        display: block;
+    }
+
+    #search-form .input-group-append .btn {
+        width: 100%;
+        margin-top: 0.25rem;
+    }
+}
+
 /* ---- About page styling ---- */
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     background-color: #f5f7fb;
+    overflow-x: hidden;
+    max-width: 100vw;
 }
 
 .about-page {
