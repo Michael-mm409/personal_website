@@ -173,13 +173,12 @@
 }
 
 /* ---- About page styling ---- */
+/* Inside datetime.html's CSS */
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    background-color: #f5f7fb;
-    overflow-x: hidden;
-    max-width: 100vw;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevents the inner document from demanding a scrollbar */
 }
-
 .about-page {
     max-width: 900px;
 }
@@ -221,4 +220,41 @@ body {
 .about-page a:hover {
     text-decoration: none;
     color: #0b5ed7;
+}
+
+/* --- Base Mobile First Styles (Phones) --- */
+.header-wrapper {
+    display: flex;
+    flex-direction: column;   /* Stacks the date neatly above the title */
+    align-items: flex-start !important;
+    gap: 0.75rem;             /* Adds clean space between the date and title */
+}
+
+.datetime-frame {
+    width: 100%;             /* Let it span the width of the phone screen */
+    height: 85px;            /* 🚀 Increased to 85px so the text has zero chance of scrolling */
+    overflow: hidden;        /* Hard cutoff so scroll tracks/arrows physically cannot render */
+}
+
+h1.title {
+    font-size: 1.6rem;       /* Clean, readable size for mobile headers */
+    font-weight: 700;
+    word-break: break-word;
+}
+
+/* --- Desktop Adjustments (Laptops/Desktops wider than 768px) --- */
+@media (min-width: 768px) {
+    .header-wrapper {
+        flex-direction: row; /* Returns side-by-side on big screens */
+        align-items: center !important;
+    }
+
+    .datetime-frame {
+        width: 350px;        /* Keeps it compact on desktop */
+        height: 45px;        /* Drops height back down since it fits on one line */
+    }
+
+    h1.title {
+        font-size: 2.5rem;
+    }
 }
