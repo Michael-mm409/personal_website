@@ -1,0 +1,21 @@
+/* Reset margins and ensure a clean background */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+}
+
+/* Base style for the text layout */
+#text {
+    font-weight: bold;
+    line-height: 1.5;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #000000; /* Keeps it matching your main site text */
+}
+
+/* 📱 Responsive breakpoint: center-align text on mobile screens */
+@media (max-width: 768px) {
+    #text {
+        text-align: center;
+    }
+}
