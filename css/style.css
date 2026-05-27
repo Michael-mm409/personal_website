@@ -80,5 +80,118 @@
     color: #333 !important; /* Darker color for the navbar text */
 }
 
+/* ---- Mobile responsiveness (Screens smaller than 576px) ---- */
+@media (max-width: 576px) {
+    /* Prevent any element from causing horizontal scroll */
+    *, *::before, *::after {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
 
+    /* 🚀 TARGET FIXED: Explicit path down to the Bootstrap flex row container */
+    header .container div.d-flex {
+        flex-direction: column !important;
+        align-items: center !important;  
+        text-align: center !important;
+        gap: 0.75rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
 
+    /* Keep the iframe perfectly sized and centered */
+    header .container div.d-flex iframe.datetime-frame {
+        width: 100% !important;
+        min-width: 100% !important;
+        height: 110px !important;        
+        min-height: 110px !important;
+        display: block !important;
+        flex-shrink: 0 !important;
+        overflow: hidden !important;
+    }
+
+    /* Allow the title to use the full width of the screen underneath the clock */
+    h1.title {
+        font-size: 1.8rem !important;       
+        text-align: center !important;
+        width: 100% !important;
+        display: block !important;
+        word-break: break-word;
+    }
+
+    /* Search form: stack elements vertically */
+    #form-container {
+        display: block;
+    }
+
+    #search-form {
+        display: block;
+        width: 100%;
+    }
+
+    #search-form .input-group {
+        flex-direction: column;
+        align-items: stretch;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    #search-form label {
+        display: block;
+        width: 100%;
+        margin: 0 0 0.4rem 0;
+    }
+
+    #search-engine {
+        width: 100%;
+        margin-right: 0 !important;
+    }
+
+    #search-engine-logo {
+        display: none;
+    }
+
+    #search-input {
+        width: 100%;
+        margin-right: 0 !important;
+    }
+
+    #search-form .input-group-append {
+        width: 100%;
+        display: block;
+    }
+
+    #search-form .input-group-append .btn {
+        width: 100%;
+        margin-top: 0.25rem;
+    }
+
+    #text {
+        text-align: center !important;   /* 🚀 Added !important to guarantee text characters center visually */
+        height: auto !important; 
+    }
+}
+
+/* --- Desktop Adjustments (Screens wider than 768px) --- */
+@media (min-width: 768px) {
+    header .d-flex {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    /* High-specificity selector beats Bootstrap's generic flex rules.
+       min-width prevents the flex shrink algorithm from ignoring width. */
+    header .d-flex iframe.datetime-frame {
+        width: 390px;
+        min-width: 390px;
+        height: 115px;         /* 🚀 Changed from 200px to perfectly fit header boundaries */
+        min-height: 115px;     /* 🚀 Changed from 200px to avoid parent overflow clipping */
+        flex-shrink: 0;
+        flex-grow: 0;
+        display: block;
+        overflow: hidden !important; /* Forces scroll tracks out of existence */
+    }
+
+    h1.title {
+        font-size: 2.5rem;
+    }
+}

@@ -1,71 +1,79 @@
 function time() {
-    // Creating object of the Date class
-    let date = new Date();
+    // 1. Define target timezones
+    const timezones = [
+        { label: "Sydney", tz: "Australia/Sydney" },
+        { label: "Brisbane", tz: "Australia/Brisbane" }
+    ];
 
-    // Get current hour
-    let hour = date.getHours();
-    // Get current minute
-    let minute = date.getMinutes();
-    // Get current second
-    let second = date.getSeconds();
+    const now = new Date();
+    let displayHTML = "";
 
-    // variable to store AM / PM
-    let period = "";
+    timezones.forEach((tzData, index) => {
+        // 2. Strict component formatting options
+        const formatter = new Intl.DateTimeFormat('en-AU', {
+            timeZone: tzData.tz,
+            hour12: false,
+            hour: 'numeric',
+            minute: 'numeric',
+            second: 'numeric',
+            weekday: 'long',
+            day: 'numeric',
+            month: 'short',
+            year: 'numeric',
+            timeZoneName: 'short' // Safely gets abbreviations directly like AEST or ADT
+        });
 
-    // Assigning AM / PM according to the current hour
-    if (hour >= 12) {
-        period = "PM";
-    } else {
-        period = "AM";
+        const parts = formatter.formatToParts(now);
+        const v = {};
+        parts.forEach(({type, value}) => { v[type] = value; });
+
+        // 3. Process 12-hour formatting math manually
+        let hour24 = parseInt(v.hour);
+        let period = hour24 >= 12 ? "PM" : "AM";
+        
+        let hour12 = hour24;
+        if (hour12 === 0) {
+            hour12 = 12;
+        } else if (hour12 > 12) {
+            hour12 = hour12 - 12;
+        }
+
+        // 4. Formatting strings
+        let name_weekday = v.weekday.slice(0, 3).toUpperCase();
+        let day = ("0" + v.day).slice(-2); 
+        let month = v.month.toUpperCase();
+        let year = v.year;
+        let timezoneAbbreviation = v.timeZoneName ? v.timeZoneName.toUpperCase() : "AEST";
+
+        // 5. Zero-pad components
+        let hourStr = update(hour12);
+        let minuteStr = update(v.minute);
+        let secondStr = update(v.second);
+
+        // 6. Build the text rows cleanly
+        displayHTML += `<strong>${tzData.label}:</strong> ${name_weekday} ${day} ${month} ${year}<br/>${hourStr}:${minuteStr}:${secondStr} ${period} timezone ${timezoneAbbreviation}`;
+        
+        if (index < timezones.length - 1) {
+            displayHTML += "<br/><br/>";
+        }
+    });
+
+    // 7. Push once to DOM container
+    const clockElement = document.getElementById("text");
+    if (clockElement) {
+        clockElement.innerHTML = displayHTML;
     }
-    const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 
-    // Converting the hour in 12-hour format
-    if (hour === 0) {
-        hour = 12;
-    } else if (hour > 12) {
-        hour = hour - 12;
-    }
-
-    // Get the name of the weekday
-    let name_weekday = weekday[date.getDay()].slice(0,3).toUpperCase();
-
-    // Updating hour, minute, and second
-    let day = ("0" + date.getDate()).slice(-2);
-    let month = date.toLocaleString('default', {month: 'short'}).toUpperCase();
-    let year = date.getFullYear();
-    let timezone = date.toTimeString().substring(18,date.toTimeString().length);
-    let timezoneAbbreviation = "";
-    let words = timezone.match(/\w+/g);
-
-    // console.log(words)
-    for (let index=0; index < words.length; index++) {
-        timezoneAbbreviation += words[index][0]
-
-    }
-    hour = update(hour);
-    minute = update(minute);
-    second = update(second);
-
-
-    // Adding time elements to the div
-    document.getElementById("text").innerHTML =
-        `${name_weekday} ${day} ${month} ${year}<br/>${hour}:${minute}:${second} ${period} timezone ${timezoneAbbreviation}`;
-    // timeDiv.innerHTML = hour + " : " + minute + " : " + second + " " + period;
-
-    // Set Timer to 1 sec (1000 ms)
     setTimeout(time, 1000);
 }
 
-// Function to update time elements if they are less than 10
-// Append 0 before time elements if they are less than 10
 function update(t) {
-    // return t < 10 ? "0" + t : t;// Ternary operator
-    // or
-    if (t < 10) {
-        return "0" + t;
-    }
-    else {
-        return t;
+    let num = parseInt(t);
+    if (num < 10) {
+        return "0" + num;
+    } else {
+        return num;
     }
 }
+
+document.addEventListener('DOMContentLoaded', time);
