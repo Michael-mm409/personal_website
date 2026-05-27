@@ -104,7 +104,7 @@
     /* Darker color for the navbar text */
 }
 
-/* ---- Mobile responsiveness ---- */
+/* ---- Mobile responsiveness (Screens smaller than 576px) ---- */
 @media (max-width: 576px) {
     /* Prevent any element from causing horizontal scroll */
     *, *::before, *::after {
@@ -112,15 +112,33 @@
         box-sizing: border-box;
     }
 
-    /* Header: stack datetime above title on small screens */
-    header .d-flex {
-        flex-direction: column;
-        align-items: flex-start !important;
-        gap: 0.25rem;
+    /* 🚀 TARGET FIXED: Explicit path down to the Bootstrap flex row container */
+    header .container div.d-flex {
+        flex-direction: column !important;
+        align-items: center !important;  
+        text-align: center !important;
+        gap: 0.75rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
     }
 
+    /* Keep the iframe perfectly sized and centered */
+    header .container div.d-flex iframe.datetime-frame {
+        width: 100% !important;
+        min-width: 100% !important;
+        height: 110px !important;        
+        min-height: 110px !important;
+        display: block !important;
+        flex-shrink: 0 !important;
+        overflow: hidden !important;
+    }
+
+    /* Allow the title to use the full width of the screen underneath the clock */
     h1.title {
-        font-size: 1.3rem;
+        font-size: 1.8rem !important;       
+        text-align: center !important;
+        width: 100% !important;
+        display: block !important;
         word-break: break-word;
     }
 
@@ -170,88 +188,31 @@
         width: 100%;
         margin-top: 0.25rem;
     }
+
+    #text {
+        text-align: center !important;   /* 🚀 Added !important to guarantee text characters center visually */
+        height: auto !important; 
+    }
 }
 
-/* ---- About page styling ---- */
-/* Inside datetime.html's CSS */
-body {
-    margin: 0;
-    padding: 0;
-    overflow: hidden; /* Prevents the inner document from demanding a scrollbar */
-}
-.about-page {
-    max-width: 900px;
-}
-
-.about-page section {
-    background-color: #ffffff;
-    border-radius: 0.75rem;
-    padding: 1.75rem 2rem;
-    margin-bottom: 1.5rem;
-    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
-}
-
-.about-page h2 {
-    font-size: 1.6rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-}
-
-.about-page h3 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-top: 1.5rem;
-    margin-bottom: 0.75rem;
-}
-
-.about-page p {
-    line-height: 1.7;
-    color: #444;
-}
-
-.about-page ul {
-    padding-left: 1.2rem;
-}
-
-.about-page a {
-    color: #0d6efd;
-}
-
-.about-page a:hover {
-    text-decoration: none;
-    color: #0b5ed7;
-}
-
-/* --- Base Mobile First Styles (Phones) --- */
-.header-wrapper {
-    display: flex;
-    flex-direction: column;   /* Stacks the date neatly above the title */
-    align-items: flex-start !important;
-    gap: 0.75rem;             /* Adds clean space between the date and title */
-}
-
-.datetime-frame {
-    width: 100%;             /* Let it span the width of the phone screen */
-    height: 85px;            /* 🚀 Increased to 85px so the text has zero chance of scrolling */
-    overflow: hidden;        /* Hard cutoff so scroll tracks/arrows physically cannot render */
-}
-
-h1.title {
-    font-size: 1.6rem;       /* Clean, readable size for mobile headers */
-    font-weight: 700;
-    word-break: break-word;
-}
-
-/* --- Desktop Adjustments (Laptops/Desktops wider than 768px) --- */
+/* --- Desktop Adjustments (Screens wider than 768px) --- */
 @media (min-width: 768px) {
-    .header-wrapper {
-        flex-direction: row; /* Returns side-by-side on big screens */
-        align-items: center !important;
+    header .d-flex {
+        flex-direction: row;
+        align-items: center;
     }
 
-    .datetime-frame {
-        width: 350px;        /* Keeps it compact on desktop */
-        height: 45px;        /* Drops height back down since it fits on one line */
+    /* High-specificity selector beats Bootstrap's generic flex rules.
+       min-width prevents the flex shrink algorithm from ignoring width. */
+    header .d-flex iframe.datetime-frame {
+        width: 390px;
+        min-width: 390px;
+        height: 115px;         /* 🚀 Changed from 200px to perfectly fit header boundaries */
+        min-height: 115px;     /* 🚀 Changed from 200px to avoid parent overflow clipping */
+        flex-shrink: 0;
+        flex-grow: 0;
+        display: block;
+        overflow: hidden !important; /* Forces scroll tracks out of existence */
     }
 
     h1.title {

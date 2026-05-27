@@ -1,78 +1,78 @@
 function time() {
-    // 1. Define your target timezones
+    // 1. Define target timezones
     const timezones = [
-        { name: "Sydney", tz: "Australia/Sydney" },
-        { name: "Brisbane", tz: "Australia/Brisbane" }
+        { label: "Sydney", tz: "Australia/Sydney" },
+        { label: "Brisbane", tz: "Australia/Brisbane" }
     ];
 
-    // 2. Get the current moment
-    let date = new Date();
-
-    // 3. Build the display for all timezones
+    const now = new Date();
     let displayHTML = "";
 
     timezones.forEach((tzData, index) => {
-        // 4. Configure the formatter for the target timezone
-        let formatter = new Intl.DateTimeFormat('en-AU', {
+        // 2. Strict component formatting options
+        const formatter = new Intl.DateTimeFormat('en-AU', {
             timeZone: tzData.tz,
             hour12: false,
             hour: 'numeric',
             minute: 'numeric',
             second: 'numeric',
             weekday: 'long',
-            day: '2-digit',
+            day: 'numeric',
             month: 'short',
             year: 'numeric',
-            timeZoneName: 'short'
+            timeZoneName: 'short' // Safely gets abbreviations directly like AEST or ADT
         });
 
-        // 5. Breakdown the formatted time into usable parts
-        const parts = formatter.formatToParts(date);
-        const dateValues = {};
-        parts.forEach(({type, value}) => {
-            dateValues[type] = value;
-        });
+        const parts = formatter.formatToParts(now);
+        const v = {};
+        parts.forEach(({type, value}) => { v[type] = value; });
 
-        // 6. Extract values
-        let hour = parseInt(dateValues.hour);
-        let minute = dateValues.minute;
-        let second = dateValues.second;
-        let day = dateValues.day;
-        let month = dateValues.month.toUpperCase();
-        let year = dateValues.year;
-        let name_weekday = dateValues.weekday.slice(0, 3).toUpperCase();
-        let timezoneAbbreviation = dateValues.timeZoneName;
-
-        // 7. Standardize formatting (leading zeros)
-        // No padding - use values as-is
-
-        // 8. Build the timezone display
-        displayHTML += `<strong>${tzData.name}:</strong> ${name_weekday} ${day} ${month} ${year}<br/>${hour}:${minute}:${second} timezone ${timezoneAbbreviation}`;
+        // 3. Process 12-hour formatting math manually
+        let hour24 = parseInt(v.hour);
+        let period = hour24 >= 12 ? "PM" : "AM";
         
-        // Add line break between timezones
+        let hour12 = hour24;
+        if (hour12 === 0) {
+            hour12 = 12;
+        } else if (hour12 > 12) {
+            hour12 = hour12 - 12;
+        }
+
+        // 4. Formatting strings
+        let name_weekday = v.weekday.slice(0, 3).toUpperCase();
+        let day = ("0" + v.day).slice(-2); 
+        let month = v.month.toUpperCase();
+        let year = v.year;
+        let timezoneAbbreviation = v.timeZoneName ? v.timeZoneName.toUpperCase() : "AEST";
+
+        // 5. Zero-pad components
+        let hourStr = update(hour12);
+        let minuteStr = update(v.minute);
+        let secondStr = update(v.second);
+
+        // 6. Build the text rows cleanly
+        displayHTML += `<strong>${tzData.label}:</strong> ${name_weekday} ${day} ${month} ${year}<br/>${hourStr}:${minuteStr}:${secondStr} ${period} timezone ${timezoneAbbreviation}`;
+        
         if (index < timezones.length - 1) {
             displayHTML += "<br/><br/>";
         }
     });
 
-    // 10. Update the DOM element
+    // 7. Push once to DOM container
     const clockElement = document.getElementById("text");
     if (clockElement) {
         clockElement.innerHTML = displayHTML;
     }
 
-    // 11. Schedule next update
     setTimeout(time, 1000);
 }
 
-/**
- * Prepends a leading zero to numbers less than 10
- */
 function update(t) {
-    if (t < 10) {
-        return "0" + t;
+    let num = parseInt(t);
+    if (num < 10) {
+        return "0" + num;
     } else {
-        return t;
+        return num;
     }
 }
 
